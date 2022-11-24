@@ -3,7 +3,6 @@
 
 # Setup usefull variables
 DIR="$( cd "$( dirname "$0" )" && pwd )" # current working directory
-OUT_FILE=$DIR/log/out
 CONFIG_DIR=$HOME/.config
 BIN_DIR=$HOME/.bin
 LOG_DIR=$HOME/.log
@@ -13,6 +12,7 @@ TMP_DIR=$HOME/.tmp
 source src/sh/welcome.sh
 source src/sh/setupFolders.sh
 source src/sh/installPackages.sh
+source src/sh/configuration.sh
 
 # Define the initialization function
 init()
@@ -20,6 +20,7 @@ init()
   welcome
   setupFolders
   installPackages
+  configuration
 }
 
 # Install git

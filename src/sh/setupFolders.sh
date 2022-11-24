@@ -27,4 +27,11 @@ setupFolders()
     mkdir $LOG_DIR
   fi
   echo "> done"
+
+  echo "> Setup .tmp"
+  if [[ ! -d $TMP_DIR ]]
+  then
+    mkdir $TMP_DIR
+  fi
+  echo "> done"
 }
