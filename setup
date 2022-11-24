@@ -1,0 +1,4 @@
+#!/usr/bin/env sh
+
+# Run the init script (install all needed dependencies)
+sh src/sh/init.sh
