@@ -68,6 +68,49 @@ zshConfig()
   echo "> done"
 }
 
+# Configure neovim
+nvimConfig()
+{
+  NEOVIM_CONFIG=$DIR/etc/nvim
+  NEOVIM_DEST=$HOME/.config/nvim
+
+  if [[ -f $NEOVIM_DEST ]]
+  then
+    rm $NEOVIM_DEST
+  fi
+
+  if [[ -d $NEOVIM_DEST ]]
+  then
+    rm -rf $NEOVIM_DEST
+  fi
+
+  echo ""
+  echo ""
+  echo "> Setup neo vim"
+  ln -s $NEOVIM_CONFIG $NEOVIM_DEST
+  echo "> done"
+}
+
+# tmux configuration
+tmuxConfig()
+{
+  TMUX_PATH=$DIR/etc/tmux/conf
+  TMUX_DEST=$HOME/.tmux.conf
+
+  echo ""
+  echo ""
+  echo "> Setup tmux"
+
+  if [[ -f $TMUX_DEST ]]
+  then
+    rm $TMUX_DEST
+  fi
+
+  ln -s $TMUX_PATH $TMUX_DEST
+
+  echo "> done"
+}
+
 
 # Configure all programs
 configuration()
@@ -85,4 +128,6 @@ configuration()
 
   gitConfig
   zshConfig
+  nvimConfig
+  tmuxConfig
 }

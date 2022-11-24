@@ -13,6 +13,7 @@ installPackages()
     "aur/zoom"
     "community/code"
     "extra/zsh"
+    "community/tmux"
 
     # NodeJS
     "community/nodejs-lts-hydrogen"

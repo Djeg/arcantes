@@ -10,7 +10,7 @@ alias gst="git status"
 alias glog="git log --graph --pretty=format:'%Cred%h %Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative"
 alias gac="git add -A && git ci -m "
 alias gci="git ci -m"
-alias gaa="git add -A"
+alias gall="git add -A"
 alias ga="git add"
 alias gpu="git push"
 alias gpl="git pull"
@@ -33,6 +33,7 @@ alias grep="grep --color"
 # Shortcuts like vim ones
 alias :q="exit"
 alias :r="source ~/.zshrc"
+alias :e="nvim"
 
 # Tree
 alias tree="tree -C -L 5 -I 'node_modules|vendor|bin'"
