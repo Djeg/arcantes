@@ -27,6 +27,10 @@ installPackages()
 
     # Lua
     "extra/lua"
+
+    # Docker
+    "community/docker"
+    "community/docker-compose"
   )
 
   echo ""

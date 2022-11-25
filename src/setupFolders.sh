@@ -34,4 +34,11 @@ setupFolders()
     mkdir $TMP_DIR
   fi
   echo "> done"
+
+  echo "> Setup Project Folder"
+  if [[ ! -d $PROJECT_FOLDER ]]
+  then
+    mkdir $PROJECT_FOLDER
+  fi
+  echo "> done"
 }

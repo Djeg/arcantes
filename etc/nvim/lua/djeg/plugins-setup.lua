@@ -75,6 +75,9 @@ return packer.startup(function(use)
   use("jose-elias-alvarez/null-ls.nvim") -- configure formatters & linters
   use("jayp0521/mason-null-ls.nvim") -- bridges gap b/w mason & null-ls
 
+  -- editorconfig
+  use("editorconfig/editorconfig-vim")
+
   if packer_bootstrap then
     require("packer").sync()
   end

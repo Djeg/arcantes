@@ -7,6 +7,7 @@ CONFIG_DIR=$HOME/.config
 BIN_DIR=$HOME/.bin
 LOG_DIR=$HOME/.log
 TMP_DIR=$HOME/.tmp
+PROJECT_FOLDER=$HOME/Project
 
 # includes the setup files
 source src/welcome.sh
@@ -18,7 +19,7 @@ source src/configuration.sh
 init()
 {
   welcome
-  setupFolders
-  installPackages
+  # setupFolders
+  # installPackages
   configuration
 }

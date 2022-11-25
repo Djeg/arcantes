@@ -60,14 +60,14 @@ cmp.setup({
     ["<C-Space>"] = cmp.mapping.complete(), -- show completion suggestions
     ["<C-e>"] = cmp.mapping.abort(), -- close completion window
     ["<CR>"] = cmp.mapping.confirm({ select = true }),
-    ["<C-l>"] = cmp.mapping(function(fallback)
+    ["<leader>n"] = cmp.mapping(function(fallback)
       if not luasnip.expand_or_jumpable() then
         fallback()
       else
         luasnip.expand_or_jump()
       end
     end),
-    ["<C-h>"] = cmp.mapping(function(fallback)
+    ["<leader>p"] = cmp.mapping(function(fallback)
       if not luasnip.jumpable(-1) then
         fallback()
       else

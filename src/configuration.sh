@@ -111,6 +111,46 @@ tmuxConfig()
   echo "> done"
 }
 
+# fonts confiuration
+fontConfig()
+{
+  FONT_PATH=$DIR/etc/fonts
+  FONT_DEST=$HOME/.local/share/fonts/
+
+  echo ""
+  echo ""
+  echo "> Setup fonts"
+
+  if [[ -d $FONT_DEST ]]
+  then
+    rm -rf $FONT_DEST
+  fi
+
+  if [[ -f $FONT_DEST ]]
+  then
+    rm $FONT_DEST
+  fi
+
+  ln -s $FONT_PATH $FONT_DEST
+
+  fc-cache
+
+  echo "> done"
+}
+
+# Docker configuration
+dockerConfig()
+{
+  echo ""
+  echo ""
+  echo "> Setup docker"
+  sudo systemctl start docker.service
+  sudo systemctl enable docker.service
+  sudo usermod -aG docker $USER
+  docker run hello-world
+  echo "> done"
+}
+
 
 # Configure all programs
 configuration()
@@ -130,4 +170,6 @@ configuration()
   zshConfig
   nvimConfig
   tmuxConfig
+  fontConfig
+  dockerConfig
 }
