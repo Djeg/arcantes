@@ -31,6 +31,9 @@ installPackages()
     # Docker
     "community/docker"
     "community/docker-compose"
+
+    # Github cli
+    "community/github-cli"
   )
 
   echo ""

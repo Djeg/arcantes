@@ -19,7 +19,7 @@ source src/configuration.sh
 init()
 {
   welcome
-  # setupFolders
-  # installPackages
+  setupFolders
+  installPackages
   configuration
 }

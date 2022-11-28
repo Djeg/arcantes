@@ -8,6 +8,10 @@
       {
         "language": "php",
         "path": "./snippets/php.json"
+      },
+      {
+        "language": "typescript",
+        "path": "./snippets/typescript.json"
       }
     ]
   }

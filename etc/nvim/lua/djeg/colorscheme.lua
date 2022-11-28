@@ -1,5 +1,5 @@
 -- setup colorscheme safely
-local status, _ = pcall(vim.cmd, "colorscheme carbonfox")
+local status, _ = pcall(vim.cmd, "colorscheme nightfox")
 if not status then
-  return
+	return
 end

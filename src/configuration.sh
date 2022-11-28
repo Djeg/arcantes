@@ -151,6 +151,56 @@ dockerConfig()
   echo "> done"
 }
 
+# Configure the dev file
+devFileConfig()
+{
+  echo ""
+  echo ""
+  echo "> Setup dev file"
+  
+  DEV_PATH="$DIR/etc/dev"
+  DEV_DESTINATION="$HOME/.dev"
+
+  if [[ -d $DEV_DESTINATION ]]
+  then
+    rm -rf $DEV_DESTINATION
+  fi
+
+  if [[ -f $DEV_DESTINATION ]]
+  then
+    rm $DEV_DESTINATION
+  fi
+
+  ln -s $DEV_PATH $DEV_DESTINATION
+
+  echo "> done"
+}
+
+# Configure the bin directory
+binConfig()
+{
+  echo ""
+  echo ""
+  echo "> Setup bin dir"
+
+  BIN_PATH="$DIR/bin"
+  BIN_DESTINATION="$HOME/.bin"
+
+  if [[ -d $BIN_DESTINATION ]]
+  then
+    rm -rf $BIN_DESTINATION
+  fi
+
+  if [[ -f $BIN_DESTINATION ]]
+  then
+    rm $BIN_DESTINATION
+  fi
+
+  ln -s $BIN_PATH $BIN_DESTINATION
+
+  echo "> done"
+}
+
 
 # Configure all programs
 configuration()
@@ -172,4 +222,6 @@ configuration()
   tmuxConfig
   fontConfig
   dockerConfig
+  devFileConfig
+  binConfig
 }

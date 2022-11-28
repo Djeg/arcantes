@@ -1,0 +1,91 @@
+#!/usr/bin/env node
+const fs = require('node:fs/promises')
+const readline = require('node:readline')
+const { stdin: input, stdout: output } = require('node:process')
+
+const rl = readline.createInterface({ input, output })
+
+const DEV_FILE_PATH = `${process.env.HOME}/.dev`
+
+const main = async () => {
+  console.log('| Choose your dev files:')
+  await ensureDevFilePath()
+
+  const devFiles = await getDevFiles()
+
+  for (let [name, folder] of Object.entries(devFiles)) {
+    console.log(`  | ${name}:`)
+
+    for (let file of folder.files) {
+      console.log(`    ${file.id}: ${file.name}`)
+    }
+  }
+
+  console.log('| Choose your numbers (ex: 0 1 10 3)')
+  const answers = await new Promise(resolve => {
+    rl.question('> ', resolve)
+  })
+
+  const files = answers
+    .split(' ')
+    .map(a => parseInt(a.trim()))
+    .filter(a => !isNaN(a))
+    .map(n =>
+      Object.entries(devFiles)
+        .reduce((acc, [n, v]) => [...acc, ...v.files], [])
+        .find(f => f.id === n),
+    )
+    .filter(f => !!f)
+
+  for (let f of files) {
+    await fs.copyFile(f.path, f.name)
+  }
+
+  console.log('> done')
+}
+
+const ensureDevFilePath = () =>
+  fs.access(DEV_FILE_PATH).catch(() => {
+    throw new Error(`Dev file path ${DEV_FILE_PATH} does not exsists ;/`)
+  })
+
+const getDevFiles = async () => {
+  let id = 0
+  const devFolders = await fs.readdir(DEV_FILE_PATH)
+  const result = {}
+
+  for (let path of devFolders) {
+    if (!(await isDir(`${DEV_FILE_PATH}/${path}`))) {
+      continue
+    }
+
+    result[path.slice(1)] = {
+      name: path,
+      path: `${DEV_FILE_PATH}/${path}`,
+      files: await fs.readdir(`${DEV_FILE_PATH}/${path}`).then(fs =>
+        fs.map(f => ({
+          name: path,
+          path: `${DEV_FILE_PATH}/${path}/${f}`,
+          id: id++,
+        })),
+      ),
+    }
+  }
+
+  return result
+}
+
+const isDir = path => fs.stat(path).then(s => s.isDirectory())
+
+const isFile = path =>
+  fs
+    .stat(path)
+    .then(s => !s.isDirectory())
+    .catch(() => false)
+
+main()
+  .then(() => process.exit(0))
+  .catch(e => {
+    console.error(e)
+    process.exit(1)
+  })

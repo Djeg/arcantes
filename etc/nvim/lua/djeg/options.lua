@@ -44,7 +44,8 @@ opt.signcolumn = "yes"
 opt.backspace = "indent,eol,start"
 
 -- leader
-vim.g.mapleader = ","
+vim.g.mapleader = " "
+opt.timeoutlen = 150
 
 -- clipboard
 opt.clipboard:append("unnamedplus")

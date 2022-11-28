@@ -1,0 +1,51 @@
+{
+  "Creates a brand new type with documentation": {
+    "prefix": "dtype",
+    "body": ["/**", " * $1", " */", "${2:export} type ${3:Name} = $0"],
+    "description": "Creates a documented type"
+  },
+  "Creates a documented function": {
+    "prefix": "dfun",
+    "body": [
+      "/**",
+      " * $1",
+      " */",
+      "${2:export} function ${3:name}($4): ${5:void} {",
+      "\t$0",
+      "}"
+    ],
+    "description": "A documented function"
+  },
+  "Creates a async documented function": {
+    "prefix": "adfun",
+    "body": [
+      "/**",
+      " * $1",
+      " */",
+      "${2:export} async function ${3:name}($4): Promise<${5:void}> {",
+      "\t$0",
+      "}"
+    ],
+    "description": "A documented function"
+  },
+  "Creates a documented arrow function": {
+    "prefix": "dff",
+    "body": ["/**", " * $1", " */", "${2:export} const ${3:name} = ($4) => $0"],
+    "description": "A documented function"
+  },
+  "Creates a async documented arrow function": {
+    "prefix": "adff",
+    "body": [
+      "/**",
+      " * $1",
+      " */",
+      "${2:export} const ${3:name} = async ($4): Promise<${5:void}> => $0"
+    ],
+    "description": "A documented function"
+  },
+  "Creates a documented signature": {
+    "prefix": "dsign",
+    "body": ["/**", " * $1", " */", "${3:name}($4): ${5:void}"],
+    "description": "A documented function"
+  }
+}

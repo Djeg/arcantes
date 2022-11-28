@@ -14,10 +14,11 @@ keymap.set("v", "<C-k>", "4k")
 keymap.set("n", "<leader>a", "gg<S-v><S-g><CR>")
 
 -- buffer navigation
-keymap.set("n", "<leader>q", ":bdelete<CR>")
+keymap.set("n", "<leader>bx", ":bdelete<CR>")
+keymap.set("n", "<leader>bn", ":bNext<CR>")
 
 -- clear search
-keymap.set("n", "<leader>/", ':let @/=""<CR>')
+keymap.set("n", "<leader>cs", ':let @/=""<CR>')
 
 -- source
 keymap.set("n", "<leader>ss", ":source ~/.config/nvim/init.lua<CR>")
