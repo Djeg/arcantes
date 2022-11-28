@@ -22,9 +22,7 @@ const main = async () => {
   }
 
   console.log('| Choose your numbers (ex: 0 1 10 3)')
-  const answers = await new Promise(resolve => {
-    rl.question('> ', resolve)
-  })
+  const answers = await question('> ')
 
   const files = answers
     .split(' ')
@@ -59,7 +57,7 @@ const getDevFiles = async () => {
       continue
     }
 
-    result[path.slice(1)] = {
+    result[path] = {
       name: path,
       path: `${DEV_FILE_PATH}/${path}`,
       files: await fs.readdir(`${DEV_FILE_PATH}/${path}`).then(fs =>
@@ -75,13 +73,19 @@ const getDevFiles = async () => {
   return result
 }
 
-const isDir = path => fs.stat(path).then(s => s.isDirectory())
+const isDir = path =>
+  fs
+    .stat(path)
+    .then(s => s.isDirectory())
+    .catch(() => false)
 
 const isFile = path =>
   fs
     .stat(path)
     .then(s => !s.isDirectory())
     .catch(() => false)
+
+const question = q => new Promise(r => rl.question(q, r))
 
 main()
   .then(() => process.exit(0))
