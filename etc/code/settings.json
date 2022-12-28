@@ -1,0 +1,61 @@
+{
+  "window.menuBarVisibility": "toggle",
+  "workbench.colorTheme": "One Dark Pro Darker",
+  "workbench.activityBar.visible": false,
+  "workbench.startupEditor": "none",
+  "editor.fontFamily": "'FiraCode Nerd Font', 'Droid Sans Mono', 'monospace', monospace",
+  "window.zoomLevel": 1,
+  "breadcrumbs.enabled": false,
+  "workbench.editor.showTabs": false,
+  "security.workspace.trust.untrustedFiles": "open",
+  "editor.minimap.enabled": false,
+  // Vim configuration
+  "vim.easymotion": true,
+  "vim.incsearch": true,
+  "vim.useSystemClipboard": true,
+  "vim.useCtrlKeys": true,
+  "vim.hlsearch": true,
+  "vim.insertModeKeyBindings": [],
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": ["<C-l>"],
+      "after": ["w"]
+    },
+    {
+      "before": ["<C-h>"],
+      "after": ["b"]
+    },
+    {
+      "before": ["<C-k>"],
+      "after": ["4", "k"]
+    },
+    {
+      "before": ["<C-j>"],
+      "after": ["4", "j"]
+    }
+  ],
+  "vim.visualModeKeyBindings": [
+    {
+      "before": ["<C-l>"],
+      "after": ["w"]
+    },
+    {
+      "before": ["<C-h>"],
+      "after": ["b"]
+    },
+    {
+      "before": ["<C-k>"],
+      "after": ["4", "k"]
+    },
+    {
+      "before": ["<C-j>"],
+      "after": ["4", "j"]
+    }
+  ],
+  "vim.leader": ",",
+  "vim.handleKeys": {
+    "<C-a>": false,
+    "<C-f>": false,
+    "<C-b>": false
+  },
+}

@@ -1,3 +1,20 @@
+# VSCode Extensions
+VSCODE_EXTENSIONS=(
+  "EditorConfig.EditorConfig"
+  "esbenp.prettier-vscode"
+  "styled-components.vscode-styled-components"
+  "vscodevim.vim"
+  "zhuangtongfa.material-theme"
+  "bmewburn.vscode-intelephense-client"
+  "MehediDracula.php-namespace-resolver"
+  "blanc-frederic.vs-phpcompanion"
+  "mikestead.dotenv"
+  "humao.rest-client"
+  "whatwedo.twig"
+  "ms-python.python"
+  "ms-azuretools.vscode-docker"
+)
+
 # Configure git
 gitConfig()
 {
@@ -201,6 +218,56 @@ binConfig()
   echo "> done"
 }
 
+# Configure VSCode
+codeConfig()
+{
+  echo ""
+  echo ""
+  echo "> Setup vscode"
+
+  CODE_PATH="$DIR/etc/code"
+  CODE_DESTINATION="$HOME/.config/Code - OSS/User"
+
+  FILES=(
+    "settings.json"
+    "keybindings.json"
+  )
+  
+  for i in ${FILES[@]}
+  do
+    echo ">> Setup $i"
+
+    ln -dsf "${CODE_PATH}/$i" "$CODE_DESTINATION/$i"
+  done
+
+  DIRS=(
+    "snippets"
+  )
+
+  for x in ${DIRS[@]}
+  do
+    echo ">> Setup $x"
+
+    if [[ -d "${CODE_DESTINATION}/$x" ]]
+    then
+      rm -rf "${CODE_DESTINATION}/$x"
+    fi
+
+    if [[ -f "${CODE_DESTINATION}/$x" ]]
+    then
+      rm -rf "${CODE_DESTINATION}/$x"
+    fi
+
+    ln -sdf "${CODE_PATH}/$x" "${CODE_DESTINATION}/$x"
+  done
+
+  for y in ${VSCODE_EXTENSIONS[@]}
+  do
+    echo ">> Install extension: $y"
+    code --install-extension $y
+  done
+}
+
 
 # Configure all programs
 configuration()
@@ -224,4 +291,5 @@ configuration()
   dockerConfig
   devFileConfig
   binConfig
+  codeConfig
 }
