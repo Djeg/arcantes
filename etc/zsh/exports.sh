@@ -17,3 +17,10 @@ export SSH_FOLDER="/home/djeg/.ssh"
 
 # NPM prefix for node_modules
 export NPM_CONFIG_PREFIX="$HOME/.node_modules"
+
+# Android PREFIX
+export ANDROID_HOME="/home/djeg/Android/Sdk"
+export ANDROID_SDK_ROOT="/home/djeg/Android/Sdk"
+
+# Update path
+export PATH=$PATH:$ANDROID_HOME:$ANDROID_HOME/tools/bin:$ANDROID_HOME/platform-tools:$ANDROID_HOME/emulator:$ANDROID_HOME/tools

@@ -1,10 +1,8 @@
 {
   "window.menuBarVisibility": "toggle",
   "workbench.colorTheme": "One Dark Pro Darker",
-  "workbench.activityBar.visible": false,
   "workbench.startupEditor": "none",
   "editor.fontFamily": "'FiraCode Nerd Font', 'Droid Sans Mono', 'monospace', monospace",
-  "window.zoomLevel": 1,
   "breadcrumbs.enabled": false,
   "workbench.editor.showTabs": false,
   "security.workspace.trust.untrustedFiles": "open",
@@ -56,6 +54,36 @@
   "vim.handleKeys": {
     "<C-a>": false,
     "<C-f>": false,
-    "<C-b>": false
+    "<C-b>": false,
+    "<Alt-a>": false,
+    "<C-a><C-w>": false
   },
+  "[html]": {
+    "editor.defaultFormatter": "mblode.twig-language"
+  },
+  "explorer.confirmDelete": false,
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.formatOnSave": true,
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "git.enableSmartCommit": true,
+  "codesnap.transparentBackground": true,
+  "codesnap.boxShadow": "rgba(0, 0, 0, 0.55) 0px 0px 12px",
+  "cSpell.language": "en,fr",
+  "cSpell.enabled": false,
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "git.confirmSync": false,
+  "githubPullRequests.remotes": ["origin", "upstream", "gitorigin"],
+  "github.gitAuthentication": true,
+  "githubPullRequests.logLevel": "debug",
+  "window.zoomLevel": 1,
+  "workbench.activityBar.visible": false
 }

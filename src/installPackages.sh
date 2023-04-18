@@ -9,11 +9,15 @@ installPackages()
     "aur/google-chrome"
     "community/gcolor3"
     "community/neovim"
+    "community/kitty"
+    "community/fzf"
     "aur/typora"
     "aur/zoom"
     "community/code"
     "extra/zsh"
     "community/tmux"
+    "extra/gimp"
+    "extra/inkscape"
 
     # NodeJS
     "community/nodejs-lts-hydrogen"

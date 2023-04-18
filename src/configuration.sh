@@ -12,7 +12,9 @@ VSCODE_EXTENSIONS=(
   "humao.rest-client"
   "whatwedo.twig"
   "ms-python.python"
-  "ms-azuretools.vscode-docker"
+  "ms-azuretools.vscode-docker",
+  "hideoo.create"
+  "adpyke.codesnap"
 )
 
 # Configure git
@@ -268,6 +270,26 @@ codeConfig()
   done
 }
 
+# Configure kitty
+kittyConfig()
+{
+  echo ""
+  echo ""
+  echo "> Setup Kitty configuration"
+
+  KITTY_CONF="$DIR/etc/kitty"
+  DEST_DIR="$HOME/.config/kitty"
+
+  if [[ -d $DEST_DIR ]]
+  then
+    rm -rf $DEST_DIR
+  fi
+
+  ln -s $KITTY_CONF $DEST_DIR
+
+  echo "> Done"
+}
+
 
 # Configure all programs
 configuration()
@@ -292,4 +314,5 @@ configuration()
   devFileConfig
   binConfig
   codeConfig
+  kittyConfig
 }

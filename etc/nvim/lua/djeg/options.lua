@@ -1,5 +1,8 @@
 local opt = vim.opt -- for consistency
 
+-- mouse
+opt.mouse = "a"
+
 -- encoding
 opt.encoding = "utf-8"
 
@@ -39,12 +42,14 @@ opt.cursorline = true
 opt.termguicolors = true
 opt.background = "dark"
 opt.signcolumn = "yes"
+opt.colorcolumn = "80"
+opt.guicursor = "n-v-c-sm:block,i-ci-ve:ver25,r-cr-o:hor20"
 
 -- improve backspace behaviour
 opt.backspace = "indent,eol,start"
 
 -- leader
-vim.g.mapleader = " "
+vim.g.mapleader = ","
 opt.timeoutlen = 150
 
 -- clipboard
