@@ -42,7 +42,7 @@ return packer.startup(function(use)
   use("nvim-lualine/lualine.nvim")
 
   -- snippets
-  use("L3MON4D3/LuaSnip") -- snippet engine
+  use({ "L3MON4D3/LuaSnip", run = "make install_jsregexp" }) -- snippet engine
   use("saadparwaiz1/cmp_luasnip") -- for autocompletion
   use("rafamadriz/friendly-snippets")
 

@@ -13,11 +13,11 @@ installPackages()
     "community/fzf"
     "aur/typora"
     "aur/zoom"
-    "community/code"
     "extra/zsh"
     "community/tmux"
     "extra/gimp"
     "extra/inkscape"
+    "aur/visual-studio-code-bin"
 
     # NodeJS
     "community/nodejs-lts-hydrogen"

@@ -12,9 +12,10 @@ VSCODE_EXTENSIONS=(
   "humao.rest-client"
   "whatwedo.twig"
   "ms-python.python"
-  "ms-azuretools.vscode-docker",
+  "ms-azuretools.vscode-docker"
   "hideoo.create"
   "adpyke.codesnap"
+  "MS-vsliveshare.vsliveshare"
 )
 
 # Configure git
@@ -228,7 +229,7 @@ codeConfig()
   echo "> Setup vscode"
 
   CODE_PATH="$DIR/etc/code"
-  CODE_DESTINATION="$HOME/.config/Code - OSS/User"
+  CODE_DESTINATION="$HOME/.config/Code/User"
 
   FILES=(
     "settings.json"
@@ -303,7 +304,7 @@ configuration()
   echo " \__/\__\___| .__/  |____/          \____/\___/|_| |_|_| |_|\__, |"
   echo "            |_|                                             |___/ "
   echo ""
-  echo ""
+  echo "" 
 
   gitConfig
   zshConfig

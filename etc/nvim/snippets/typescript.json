@@ -23,6 +23,13 @@
       "`"
     ]
   },
+  "Creates a react state": {
+    "prefix": "rst",
+    "description": "Creates a react state",
+    "body": [
+      "const [${1:state}, set${1/(.*)/${1:/capitalize}/}] = useState($2)"
+    ]
+  },
   "Creates a nanostore": {
     "prefix": "nanomap",
     "description": "Creates a nanostore",
