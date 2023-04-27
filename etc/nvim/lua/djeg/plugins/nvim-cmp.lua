@@ -60,10 +60,10 @@ cmp.setup({
     ["<C-e>"] = cmp.mapping.abort(), -- close completion window
     ["<CR>"] = cmp.mapping.confirm({ select = true }),
     ["<leader><Tab>"] = cmp.mapping(function(fallback)
-      if not luasnip.expand_or_jumpable() then
+      if not luasnip.jumpable(1) then
         fallback()
       else
-        luasnip.expand_or_jump()
+        luasnip.jump(1)
       end
     end),
     ["<leader><S-Tab>"] = cmp.mapping(function(fallback)
@@ -80,12 +80,25 @@ cmp.setup({
     { name = "luasnip" }, -- snippets
     { name = "buffer" }, -- text within current buffer
     { name = "path" }, -- file system paths
+    { name = "nvim_lsp_signature_help" }, -- file system paths
   }),
   -- configure lspkind for vs-code like icons
   formatting = {
-    format = lspkind.cmp_format({
-      maxwidth = 50,
-      ellipsis_char = "...",
-    }),
+    fields = { "menu", "abbr", "kind" },
+    format = function(entry, item)
+      local menu_icon = {
+        nvim_lsp = "λ",
+        vsnip = "⋗",
+        buffer = "Ω",
+        path = "🖫",
+      }
+      item.menu = menu_icon[entry.source.name]
+      return item
+    end,
+  },
+  -- window
+  window = {
+    completion = cmp.config.window.bordered(),
+    documentation = cmp.config.window.bordered(),
   },
 })

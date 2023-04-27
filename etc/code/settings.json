@@ -84,6 +84,6 @@
   "githubPullRequests.remotes": ["origin", "upstream", "gitorigin"],
   "github.gitAuthentication": true,
   "githubPullRequests.logLevel": "debug",
-  "workbench.activityBar.visible": false,
-  "window.zoomLevel": 2
+  "window.zoomLevel": 2,
+  "workbench.activityBar.visible": false
 }

@@ -38,6 +38,9 @@ installPackages()
 
     # Github cli
     "community/github-cli"
+
+    # Rust
+    "extra/rust"
   )
 
   echo ""

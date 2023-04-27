@@ -83,6 +83,9 @@ return packer.startup(function(use)
   -- styled components supports
   use("styled-components/vim-styled-components")
 
+  -- rust setup
+  use("simrat39/rust-tools.nvim")
+
   if packer_bootstrap then
     require("packer").sync()
   end
