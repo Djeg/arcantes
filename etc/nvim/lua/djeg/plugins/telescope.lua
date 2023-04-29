@@ -29,12 +29,21 @@ telescope.setup({
     },
   },
   pickers = {
-    find_files = themes.get_dropdown(),
+    find_files = themes.get_ivy(),
+  },
+  extensions = {
+    file_explorer = {
+      theme = themes.get_ivy(),
+      -- disables netrw and use telescope-file-browser in its place
+      hijack_netrw = true,
+    },
   },
 })
 
 telescope.load_extension("fzf")
+telescope.load_extension("file_browser")
 
 -- configue keymaps for telescope
 vim.keymap.set("n", "<C-p>", ":Telescope find_files<CR>")
 vim.keymap.set("n", "<C-b>", ":Telescope buffers<CR>")
+vim.keymap.set("n", "<C-f>", ":Telescope file_browser path=%:p:h select_buffer=true<CR>")

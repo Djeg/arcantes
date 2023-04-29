@@ -6,3 +6,4 @@ end
 
 -- transparent background
 vim.cmd([[ hi Normal guibg=NONE ctermbg=NONE ]])
+vim.cmd([[ hi Visual guibg=#414141 ctermbg=239 ]])

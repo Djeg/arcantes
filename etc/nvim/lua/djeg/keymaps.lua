@@ -18,7 +18,7 @@ keymap.set("n", "<leader>bx", ":bdelete<CR>")
 keymap.set("n", "<leader>bn", ":bNext<CR>")
 
 -- clear search
-keymap.set("n", "<leader>cs", ':let @/=""<CR>')
+keymap.set("n", "<leader>/", ':let @/=""<CR>')
 
 -- source
-keymap.set("n", "<leader>ss", ":source ~/.config/nvim/init.lua<CR>")
+keymap.set("n", "<leader>so", ":source ~/.config/nvim/init.lua<CR>")

@@ -37,5 +37,5 @@ nvimtree.setup({
 })
 
 -- add keymaps for tree
-vim.keymap.set("n", "<leader>x", ":NvimTreeToggle<cr>")
+vim.keymap.set("n", "<leader>x", ":NvimTreeFindFileToggle<cr>")
 vim.keymap.set("n", "<leader>nf", ":NvimTreeFindFileToggle<cr>")
