@@ -1,0 +1,322 @@
+{
+  "Creates a documented precompiled function": {
+    "prefix": "fund",
+    "description": "Creates a documented precompiled function",
+    "body": [
+      "/**",
+      " * $1",
+      " */",
+      "export ${4:async }function ${2:name}($3) {",
+      "\t$0",
+      "}"
+    ]
+  },
+  "Creates a documented precompiled function of 1 argument": {
+    "prefix": "fund1",
+    "description": "Creates a documented precompiled function of 1 argument",
+    "body": [
+      "/**",
+      " * $1",
+      " */",
+      "export ${5:async }function ${2:name}(${3:name}: ${4:string}) {",
+      "\t$0",
+      "}"
+    ]
+  },
+  "Creates a documented precompiled function of 2 arguments": {
+    "prefix": "fund2",
+    "description": "Creates a documented precompiled function of 2 arguments",
+    "body": [
+      "/**",
+      " * $1",
+      " */",
+      "export ${7:async }function ${2:name}(${3:name}: ${4:string}, ${5:name2}: ${6:string}) {",
+      "\t$0",
+      "}"
+    ]
+  },
+  "Creates a documented precompiled function of 3 arguments": {
+    "prefix": "fund3",
+    "description": "Creates a documented precompiled function of 3 arguments",
+    "body": [
+      "/**",
+      " * $1",
+      " */",
+      "export ${9:async }function ${2:name}(${3:name}: ${4:string}, ${5:name2}: ${6:string}, ${7:name3}: ${8:string}) {",
+      "\t$0",
+      "}"
+    ]
+  },
+  "Creates a documented precompiled function of 4 arguments": {
+    "prefix": "fund4",
+    "description": "Creates a documented precompiled function of 4 arguments",
+    "body": [
+      "/**",
+      " * $1",
+      " */",
+      "export ${11:async }function ${2:name}(${3:name}: ${4:string}, ${5:name2}: ${6:string}, ${7:name3}: ${8:string}, ${9:name4}: ${10:string}) {",
+      "\t$0",
+      "}"
+    ]
+  },
+  "Creates a precompiled function": {
+    "prefix": "fun",
+    "description": "Creates a precompiled function",
+    "body": ["export ${3:async }function ${1:name}($2) {", "\t$0", "}"]
+  },
+  "Creates a precompiled function of 1 argument": {
+    "prefix": "fun1",
+    "description": "Creates a precompiled function of 1 argument",
+    "body": [
+      "export ${4:async }function ${1:name}(${2:name1}: ${3:string}) {",
+      "\t$0",
+      "}"
+    ]
+  },
+  "Creates a precompiled function of 2 arguments": {
+    "prefix": "fun2",
+    "description": "Creates a precompiled function of 2 arguments",
+    "body": [
+      "export ${6:async }function ${1:name}(${2:name1}: ${3:string}, ${4:name2}: ${5:string}) {",
+      "\t$0",
+      "}"
+    ]
+  },
+  "Creates a precompiled function of 3 arguments": {
+    "prefix": "fun3",
+    "description": "Creates a precompiled function of 3 arguments",
+    "body": [
+      "export ${8:async }function ${1:name}(${2:name1}: ${3:string}, ${4:name2}: ${5:string}, ${6:name3}: ${7:string}) {",
+      "\t$0",
+      "}"
+    ]
+  },
+  "Creates a precompiled function of 4 arguments": {
+    "prefix": "fun4",
+    "description": "Creates a precompiled function of 4 arguments",
+    "body": [
+      "export ${10:async }function ${1:name}(${2:name1}: ${3:string}, ${4:name2}: ${5:string}, ${6:name3}: ${7:string}, ${8:name4}: ${9:string}) {",
+      "\t$0",
+      "}"
+    ]
+  },
+
+  "Creates a documented function callback": {
+    "prefix": "fnd",
+    "description": "Creates a documented function callback",
+    "body": [
+      "/**",
+      " * $1",
+      " */",
+      "export const ${2:name} = ($3) => {",
+      "\t$0",
+      "}"
+    ]
+  },
+  "Creates a function callback": {
+    "prefix": "fn",
+    "description": "Creates a function callback",
+    "body": ["export const ${1:name} = ($2) => {", "\t$0", "}"]
+  },
+  "Creates a documented react component": {
+    "prefix": "recd",
+    "description": "Creates and export a documented react component",
+    "body": [
+      "/**",
+      " * $1",
+      " */",
+      "export default function ${TM_FILENAME_BASE}() {",
+      "\t$0",
+      "}"
+    ]
+  },
+  "Creates a react component": {
+    "prefix": "rec",
+    "description": "Creates and export a documented react",
+    "body": ["export default function ${TM_FILENAME_BASE}() {", "\t$0", "}"]
+  },
+  "Creates a react context": {
+    "prefix": "rcon",
+    "description": "Creates a react context",
+    "body": ["export const ${1:Name}Context = createContext<${2:Type}>($3)"]
+  },
+  "Creates a documented react context": {
+    "prefix": "rcond",
+    "description": "Creates a documented react context",
+    "body": [
+      "/**",
+      " * $1",
+      " */",
+      "export const ${2:Name}Context = createContext<${3:Type}>($4)"
+    ]
+  },
+  "Creates a react state": {
+    "prefix": "rst",
+    "description": "Creates a react state",
+    "body": [
+      "const [ ${1:name}, set${1/(.*)/${1:/capitalize}/} ] = useState($2)"
+    ]
+  },
+  "Creates a new documented styled react component": {
+    "prefix": "stcd",
+    "description": "Creates a documented styled component",
+    "body": [
+      "/**",
+      " * $1",
+      " */",
+      "export const ${2:Name} = styled.${3:div}`",
+      "\t$0",
+      "`"
+    ]
+  },
+  "Creates a new styled react component": {
+    "prefix": "stc",
+    "description": "Creates a styled component",
+    "body": ["export const ${1:Name} = styled.${2:div}`", "\t$0", "`"]
+  },
+  "Creates a documented global styled react component": {
+    "prefix": "stgd",
+    "description": "Creates a documented global styled component",
+    "body": [
+      "/**",
+      " * $1",
+      " */",
+      "export const ${2:GlobalStyle} = createGlobalStyle`",
+      "\t$0",
+      "`"
+    ]
+  },
+  "Creates a global styled react component": {
+    "prefix": "stg",
+    "description": "Creates a global styled component",
+    "body": ["export const ${1:GlobalStyle} = createGlobalStyle`", "\t$0", "`"]
+  },
+  "Creates an nanostore atom": {
+    "prefix": "nat",
+    "description": "Create a nanostore atom",
+    "body": ["export const ${1:Name}Store = atom<${2:Type}>($3)$0"]
+  },
+  "Creates a documented nanostore atom": {
+    "prefix": "natd",
+    "description": "Create a documented nanostore atom",
+    "body": [
+      "/**",
+      " * $1",
+      " */",
+      "export const ${2:Name}Store = atom<${3:Type}>($4)$0"
+    ]
+  },
+  "Creates a nanostore map": {
+    "prefix": "nmap",
+    "description": "Creates a nanostore map",
+    "body": ["export const ${1:Name}Store = map<${2:Type}>({", "\t$0", "})"]
+  },
+  "Creates a documented nanostore map": {
+    "prefix": "nmapd",
+    "description": "Creates a documented nanostore map",
+    "body": [
+      "/**",
+      " * $1",
+      " */",
+      "export const ${2:Name}Store = map<${3:Type}>({",
+      "\t$0",
+      "})"
+    ]
+  },
+  "Creates a nanostore action of 0 arguments": {
+    "prefix": "nact",
+    "description": "Creates a nanostore action of 0 argument",
+    "body": [
+      "export const ${1:actionName} = action(${2:Store}, '$1', $3store => {",
+      "\t$0",
+      "})"
+    ]
+  },
+  "Creates a documented nanostore action of 0 arguments": {
+    "prefix": "nactd",
+    "description": "Creates a documented nanostore action of 0 argument",
+    "body": [
+      "/**",
+      " * $1",
+      " */",
+      "export const ${2:actionName} = action(${3:Store}, '$2', $4store => {",
+      "\t$0",
+      "})"
+    ]
+  },
+  "Creates a nanostore action of 1 arguments": {
+    "prefix": "nact1",
+    "description": "Creates a nanostore action of 1 argument",
+    "body": [
+      "export const ${1:actionName} = action(${2:Store}, '$1', $3(store, ${4:name}: ${5:string}) => {",
+      "\t$0",
+      "})"
+    ]
+  },
+  "Creates a documented nanostore action of 1 arguments": {
+    "prefix": "nact1d",
+    "description": "Creates a documented nanostore action of 1 argument",
+    "body": [
+      "/**",
+      " * $1",
+      " */",
+      "export const ${2:actionName} = action(${3:Store}, '$2', $4(store, ${5:name}: ${6:string}) => {",
+      "\t$0",
+      "})"
+    ]
+  },
+  "Creates a nanostore action of 2 arguments": {
+    "prefix": "nact2",
+    "description": "Creates a nanostore action of 2 argument",
+    "body": [
+      "export const ${1:actionName} = action(${2:Store}, '$1', $3(store, ${4:name}: ${5:string}, ${6:name2}: ${7:string}) => {",
+      "\t$0",
+      "})"
+    ]
+  },
+  "Creates a documented nanostore action of 2 arguments": {
+    "prefix": "nact2d",
+    "description": "Creates a documented nanostore action of 2 argument",
+    "body": [
+      "/**",
+      " * $1",
+      " */",
+      "export const ${2:actionName} = action(${3:Store}, '$2', $4(store, ${5:name}: ${6:string}, ${7:name2}: ${8:string}) => {",
+      "\t$0",
+      "})"
+    ]
+  },
+  "Creates a nanostore on mount effect": {
+    "prefix": "nmo",
+    "description": "Creates a nanostore onMount event effect",
+    "body": ["onMount(${1:Store}, () => {", "\t$0", "})"]
+  },
+  "Creates a documented nanostore on mount effect": {
+    "prefix": "nmod",
+    "description": "Creates a documented nanostore onMount event effect",
+    "body": ["/**", " * $1", " */", "onMount(${2:Store}, () => {", "\t$0", "})"]
+  },
+  "Génére une description de module": {
+    "prefix": "modoc",
+    "description": "Generate a module description",
+    "body": [
+      "/**",
+      " * @module ${TM_FILENAME_BASE}",
+      " *",
+      " * @description",
+      " *  $1",
+      " */",
+      "$0"
+    ]
+  },
+  "Génére un type typescript": {
+    "prefix": "ty",
+    "description": "Generate a typescript type",
+    "body": ["export type ${1:Name} = $0"]
+  },
+  "Génére un type typescript documenté": {
+    "prefix": "tyd",
+    "description": "Generate a documented typescript type",
+    "body": ["/**", " * $1", " */", "export type ${2:Name} = $0"]
+  }
+}

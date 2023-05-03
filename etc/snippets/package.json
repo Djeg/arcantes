@@ -7,15 +7,15 @@
     "snippets": [
       {
         "language": "php",
-        "path": "./snippets/php.json"
+        "path": "./php.json"
       },
       {
         "language": "typescript",
-        "path": "./snippets/typescriptreact.json"
+        "path": "./typescriptreact.json"
       },
       {
         "language": "typescriptreact",
-        "path": "./snippets/typescriptreact.json"
+        "path": "./typescriptreact.json"
       }
     ]
   }

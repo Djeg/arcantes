@@ -59,13 +59,44 @@ return packer.startup(function(use)
   -- automatically creates folders on file save
   use("jghauser/mkdir.nvim")
 
+  -- treesitter for smart indentation rules
+  use({
+    "nvim-treesitter/nvim-treesitter",
+    run = function()
+      local ts_update = require("nvim-treesitter.install").update({ with_sync = true })
+      ts_update()
+    end,
+    config = function()
+      require("nvim-treesitter.configs").setup({
+        ensure_installed = { "typescript" },
+        auto_install = true,
+        indent = {
+          enable = true,
+        },
+        highlight = {
+          enable = true,
+        },
+      })
+      local styled = require("djeg.plugins.tree-sitter.styled-injection")
+      styled.queries()
+      styled.directives()
+    end,
+  })
+
   -- autocomplete
   use("hrsh7th/nvim-cmp") -- completion plugin
   use("hrsh7th/cmp-buffer") -- source for text in buffer
   use("hrsh7th/cmp-path") -- source for file system paths
 
   -- auto pairs & closing
-  use("windwp/nvim-autopairs")
+  use({
+    "windwp/nvim-autopairs",
+    config = function()
+      require("nvim-autopairs").setup({
+        disable_filetype = { "TelescopePrompt", "vim" },
+      })
+    end,
+  })
 
   -- managing & installing lsp servers, linters & formatters
   use("williamboman/mason.nvim") -- in charge of managing lsp servers, linters & formatters
@@ -74,7 +105,15 @@ return packer.startup(function(use)
   -- configuring lsp servers
   use("neovim/nvim-lspconfig") -- easily configure language servers
   use("hrsh7th/cmp-nvim-lsp") -- for autocompletion
-  use({ "glepnir/lspsaga.nvim", branch = "main" }) -- enhanced lsp uis
+  use({
+    "glepnir/lspsaga.nvim",
+    branch = "main",
+    config = function()
+      local saga = require("lspsaga")
+      saga.setup({})
+    end,
+  }) -- enhanced lsp uis
+  use("ray-x/lsp_signature.nvim") -- allow to display great signatures
   use("jose-elias-alvarez/typescript.nvim") -- additional functionality for typescript server (e.g. rename file & update imports)
   use("onsails/lspkind.nvim") -- vs-code like icons for autocompletion
 

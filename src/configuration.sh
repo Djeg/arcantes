@@ -256,11 +256,6 @@ codeConfig()
       rm -rf "${CODE_DESTINATION}/$x"
     fi
 
-    if [[ -f "${CODE_DESTINATION}/$x" ]]
-    then
-      rm -rf "${CODE_DESTINATION}/$x"
-    fi
-
     ln -sdf "${CODE_PATH}/$x" "${CODE_DESTINATION}/$x"
   done
 

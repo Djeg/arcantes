@@ -1,3 +1,13 @@
+local function calculateColumns()
+  local column = "80"
+
+  for i = 81, 400 do
+    column = column .. "," .. string.format("%d", i)
+  end
+
+  return column
+end
+
 local opt = vim.opt -- for consistency
 
 -- mouse
@@ -12,9 +22,9 @@ opt.number = true
 -- tabs & indentation
 opt.tabstop = 2
 opt.shiftwidth = 2
-opt.expandtab = true
+opt.softtabstop = 2
 opt.autoindent = true
-opt.smartindent = true
+opt.smartindent = false
 
 -- hide status line
 opt.ls = 1
@@ -42,7 +52,7 @@ opt.cursorline = true
 opt.termguicolors = true
 opt.background = "dark"
 opt.signcolumn = "yes"
-opt.colorcolumn = "80"
+opt.colorcolumn = calculateColumns()
 opt.guicursor = "n-v-c-sm:block,i-ci-ve:ver25,r-cr-o:hor20"
 
 -- improve backspace behaviour

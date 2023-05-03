@@ -26,6 +26,7 @@ end
 require("luasnip/loaders/from_vscode").lazy_load()
 
 vim.opt.completeopt = "menu,menuone,noselect"
+local select_opts = { behavior = cmp.SelectBehavior.Select }
 
 cmp.setup({
   snippet = {
@@ -34,6 +35,17 @@ cmp.setup({
     end,
   },
   mapping = cmp.mapping.preset.insert({
+    ["<Tab>"] = cmp.mapping(function(fallback)
+      if cmp.visible() then
+        cmp.select_next_item()
+      elseif luasnip.expand_or_locally_jumpable() then
+        luasnip.expand_or_jump()
+      elseif has_words_before() then
+        cmp.complete()
+      else
+        fallback()
+      end
+    end, { "i", "s" }),
     ["<S-Tab>"] = cmp.mapping(function(fallback)
       if cmp.visible() then
         cmp.select_prev_item()
@@ -42,28 +54,17 @@ cmp.setup({
       else
         fallback()
       end
-    end, { "i", "s" }), -- previous suggestion
-    ["<Tab>"] = cmp.mapping(function(fallback)
-      if cmp.visible() then
-        cmp.select_next_item()
-      elseif luasnip.expand_or_jumpable() then
-        luasnip.expand_or_jump()
-      elseif has_words_before() then
-        cmp.complete()
-      else
-        fallback()
-      end
-    end, { "i", "s" }), -- next suggestion
+    end, { "i", "s" }),
     ["<C-b>"] = cmp.mapping.scroll_docs(-4),
     ["<C-f>"] = cmp.mapping.scroll_docs(4),
     ["<C-Space>"] = cmp.mapping.complete(), -- show completion suggestions
     ["<C-e>"] = cmp.mapping.abort(), -- close completion window
-    ["<CR>"] = cmp.mapping.confirm({ select = true }),
+    ["<CR>"] = cmp.mapping.confirm({ select = false }),
     ["<leader><Tab>"] = cmp.mapping(function(fallback)
-      if not luasnip.jumpable(1) then
-        fallback()
-      else
+      if luasnip.jumpable(1) then
         luasnip.jump(1)
+      else
+        fallback()
       end
     end),
     ["<leader><S-Tab>"] = cmp.mapping(function(fallback)
