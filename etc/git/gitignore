@@ -8,3 +8,4 @@ test.*
 _vimrc_local.vim
 .agignore
 *debug.log
+.DS_Store

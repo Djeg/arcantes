@@ -1,5 +1,5 @@
-# Install the standard package
-installPackages()
+# install Linux Packages
+installLinuxPackages()
 {
   OUT_FILE=$LOG_DIR/installPackages.arcantes.log
   YAY_DIR=$TMP_DIR/yay
@@ -12,7 +12,6 @@ installPackages()
     "community/kitty"
     "community/fzf"
     "aur/typora"
-    "aur/zoom"
     "extra/zsh"
     "community/tmux"
     "extra/gimp"
@@ -98,4 +97,90 @@ installPackages()
   echo ""
 
   echo "> done"
+}
+
+# install mac os packages
+installMacPackages()
+{
+  echo ""
+  echo " __              __           __                          "
+  echo "(_  |_  _  _      _)    __   |__)  _   _ |   _   _   _  _ "
+  echo "__) |_ (- |_)    /__         |    (_| (_ |( (_| (_) (- _) "
+  echo ""
+
+  BREW_PACKAGES=(
+    # General applications
+    "google-chrome"
+    "neovim"
+    "kitty"
+    "fzf"
+    "typora"
+    "tmux"
+    "gimp"
+    "inkscape"
+    "visual-studio-code"
+
+    # NodeJS
+    "node"
+
+    # PHP
+    "php"
+    "composer"
+
+    # Python
+    "python"
+
+    # Lua
+    "lua"
+
+    # Docker
+    "docker"
+    "docker-compose"
+    "colima"
+
+    # Github cli
+    "gh"
+
+    # Rust
+    "rust"
+  )
+
+  echo "> installing homebrew"
+  echo ""
+
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+  export PATH=$PATH:/opt/homebrew/bin:/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin
+
+  echo ""
+  echo ""
+  echo "> done"
+
+  echo "> Installing brew packages :"
+  echo ""
+  for i in ${BREW_PACKAGES[@]}
+  do
+    echo ""
+    echo ""
+    echo ">> $i"
+    brew install $i
+    echo ""
+    echo ""
+  done
+
+  echo ""
+  echo ""
+
+  echo "> done"
+}
+
+# Install the standard package
+installPackages()
+{
+  if [[ "$OSTYPE" == "linux"* ]]
+  then
+    installLinuxPackages
+  else
+    installMacPackages
+  fi
 }

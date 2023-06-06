@@ -64,7 +64,7 @@ zshConfig()
   echo ""
   echo ""
   echo "> Install oh my zsh"
-  sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
   echo "> done"
   echo ""
   echo ""
@@ -135,7 +135,8 @@ tmuxConfig()
 fontConfig()
 {
   FONT_PATH=$DIR/etc/fonts
-  FONT_DEST=$HOME/.local/share/fonts/
+
+  [[ "$OSTYPE" == "linux"* ]] && FONT_DEST=$HOME/.local/share/fonts/ || FONT_DEST=$HOME/Library/Fonts/
 
   echo ""
   echo ""
@@ -153,7 +154,10 @@ fontConfig()
 
   ln -s $FONT_PATH $FONT_DEST
 
-  fc-cache
+  if [[ "$OSTYPE" == "linux"* ]]
+  then
+    fc-cache
+  fi
 
   echo "> done"
 }
@@ -164,10 +168,17 @@ dockerConfig()
   echo ""
   echo ""
   echo "> Setup docker"
-  sudo systemctl start docker.service
-  sudo systemctl enable docker.service
-  sudo usermod -aG docker $USER
+  if [[ "$OSTYPE" == "linux"* ]]
+  then
+    sudo systemctl start docker.service
+    sudo systemctl enable docker.service
+    sudo usermod -aG docker $USER
+  else
+    colima start
+  fi
+
   docker run hello-world
+
   echo "> done"
 }
 
@@ -177,7 +188,7 @@ devFileConfig()
   echo ""
   echo ""
   echo "> Setup dev file"
-  
+
   DEV_PATH="$DIR/etc/dev"
   DEV_DESTINATION="$HOME/.dev"
 
@@ -229,18 +240,19 @@ codeConfig()
   echo "> Setup vscode"
 
   CODE_PATH="$DIR/etc/code"
-  CODE_DESTINATION="$HOME/.config/Code/User"
+
+  [[ "$OSTYPE" == "linux"* ]] && CODE_DESTINATION="$HOME/.config/Code/User" || CODE_DESTINATION="$HOME/Library/Application Support/Code/User"
 
   FILES=(
     "settings.json"
     "keybindings.json"
   )
-  
+
   for i in ${FILES[@]}
   do
     echo ">> Setup $i"
 
-    ln -dsf "${CODE_PATH}/$i" "$CODE_DESTINATION/$i"
+    ln -sf "${CODE_PATH}/$i" "$CODE_DESTINATION/$i"
   done
 
   DIRS=(
@@ -256,7 +268,7 @@ codeConfig()
       rm -rf "${CODE_DESTINATION}/$x"
     fi
 
-    ln -sdf "${CODE_PATH}/$x" "${CODE_DESTINATION}/$x"
+    ln -sf "${CODE_PATH}/$x" "${CODE_DESTINATION}/$x"
   done
 
   for y in ${VSCODE_EXTENSIONS[@]}
@@ -301,14 +313,14 @@ configuration()
   echo ""
   echo "" 
 
-  gitConfig
-  zshConfig
-  nvimConfig
-  tmuxConfig
-  fontConfig
-  dockerConfig
-  devFileConfig
-  binConfig
+  # gitConfig
+  # zshConfig
+  # nvimConfig
+  # tmuxConfig
+  # fontConfig
+  # dockerConfig
+  # devFileConfig
+  # binConfig
   codeConfig
   kittyConfig
 }

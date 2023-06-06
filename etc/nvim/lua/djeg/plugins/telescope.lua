@@ -32,11 +32,11 @@ telescope.setup({
     },
   },
   pickers = {
-    find_files = themes.get_ivy(),
+    find_files = themes.get_dropdown(),
   },
   extensions = {
     file_explorer = {
-      theme = themes.get_ivy(),
+      theme = themes.get_dropdown(),
       -- disables netrw and use telescope-file-browser in its place
       hijack_netrw = true,
     },

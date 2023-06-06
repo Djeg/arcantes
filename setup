@@ -1,5 +1,12 @@
 #!/usr/bin/env sh
 
+if [[ "$OSTYPE" == "linux"* ]]
+then
+    echo "Linux detected"
+else
+    echo "MacOS detected"
+fi
+
 # Include the initialisation
 source src/init.sh
 

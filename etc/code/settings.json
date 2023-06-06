@@ -2,7 +2,7 @@
   "window.menuBarVisibility": "toggle",
   "workbench.colorTheme": "One Dark Pro Darker",
   "workbench.startupEditor": "none",
-  "editor.fontFamily": "'FiraCode Nerd Font', 'Droid Sans Mono', 'monospace', monospace",
+  "editor.fontFamily": "'Menlo', 'FiraCode Nerd Font', 'Droid Sans Mono', 'monospace', monospace",
   "breadcrumbs.enabled": false,
   "workbench.editor.showTabs": false,
   "security.workspace.trust.untrustedFiles": "open",
