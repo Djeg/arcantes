@@ -25,8 +25,8 @@ source src/configuration.sh
 # Define the initialization function
 init()
 {
-  # welcome
-  # setupFolders
-  # installPackages
+  welcome
+  setupFolders
+  installPackages
   configuration
 }

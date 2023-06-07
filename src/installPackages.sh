@@ -119,6 +119,7 @@ installMacPackages()
     "gimp"
     "inkscape"
     "visual-studio-code"
+    "watchman"
 
     # NodeJS
     "node"

@@ -311,16 +311,16 @@ configuration()
   echo " \__/\__\___| .__/  |____/          \____/\___/|_| |_|_| |_|\__, |"
   echo "            |_|                                             |___/ "
   echo ""
-  echo "" 
+  echo ""
 
-  # gitConfig
-  # zshConfig
-  # nvimConfig
-  # tmuxConfig
-  # fontConfig
-  # dockerConfig
-  # devFileConfig
-  # binConfig
+  gitConfig
+  zshConfig
+  nvimConfig
+  tmuxConfig
+  fontConfig
+  dockerConfig
+  devFileConfig
+  binConfig
   codeConfig
   kittyConfig
 }
