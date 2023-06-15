@@ -2,3 +2,5 @@ root/*.md
 etc/nvim/plugin
 tests/
 .env
+.localrc
+etc/info/*.md

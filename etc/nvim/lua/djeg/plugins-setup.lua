@@ -42,6 +42,9 @@ return packer.startup(function(use)
   -- lualine
   use("nvim-lualine/lualine.nvim")
 
+  -- git integration
+  use("tpope/vim-fugitive")
+
   -- snippets
   use({ "L3MON4D3/LuaSnip", run = "make install_jsregexp" }) -- snippet engine
   use("saadparwaiz1/cmp_luasnip") -- for autocompletion
@@ -68,7 +71,7 @@ return packer.startup(function(use)
     end,
     config = function()
       require("nvim-treesitter.configs").setup({
-        ensure_installed = { "typescript" },
+        ensure_installed = { "typescript", "tsx" },
         auto_install = true,
         indent = {
           enable = true,
@@ -84,7 +87,7 @@ return packer.startup(function(use)
   })
 
   -- autocomplete
-  use("hrsh7th/nvim-cmp") -- completion plugin
+  use({ "hrsh7th/nvim-cmp", lazy = true }) -- completion plugin
   use("hrsh7th/cmp-buffer") -- source for text in buffer
   use("hrsh7th/cmp-path") -- source for file system paths
 
@@ -103,7 +106,7 @@ return packer.startup(function(use)
   use("williamboman/mason-lspconfig.nvim") -- bridges gap b/w mason & lspconfig
 
   -- configuring lsp servers
-  use("neovim/nvim-lspconfig") -- easily configure language servers
+  use({ "neovim/nvim-lspconfig", lazy = true }) -- easily configure language servers
   use("hrsh7th/cmp-nvim-lsp") -- for autocompletion
   use({
     "glepnir/lspsaga.nvim",
@@ -129,6 +132,9 @@ return packer.startup(function(use)
 
   -- rust setup
   use("simrat39/rust-tools.nvim")
+
+  -- jest test in neovim o/
+  use("David-Kunz/jester")
 
   if packer_bootstrap then
     require("packer").sync()

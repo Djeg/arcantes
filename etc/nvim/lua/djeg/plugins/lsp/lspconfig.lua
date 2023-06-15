@@ -24,7 +24,7 @@ local on_attach = function(client, bufnr)
   local opts = { noremap = false, silent = true, buffer = bufnr }
 
   -- set keybinds
-  keymap.set("n", "<leader>gf", "<cmd>Lspsaga lsp_finder<CR>", opts) -- show definition, references
+  keymap.set("n", "<leader>gf", "<cmd>:Telescope lsp_references<CR>", opts) -- show definition, references
   keymap.set("n", "<leader>gD", "<Cmd>lua vim.lsp.buf.declaration()<CR>", opts) -- got to declaration
   keymap.set("n", "<leader>gd", "<cmd>Lspsaga peek_definition<CR>", opts) -- see definition and make edits in window
   keymap.set("n", "<leader>gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts) -- go to implementation
@@ -47,6 +47,8 @@ end
 
 -- used to enable autocompletion (assign to every lsp server config)
 local capabilities = cmp_nvim_lsp.default_capabilities()
+-- used to speedup lsp
+local flags = { allow_incremental_sync = true, debounce_text_changes = 500 }
 
 -- Change the Diagnostic symbols in the sign column (gutter)
 -- (not in youtube nvim video)
@@ -60,6 +62,7 @@ end
 lspconfig["html"].setup({
   capabilities = capabilities,
   on_attach = on_attach,
+  flags = flags,
 })
 
 -- configure typescript server with plugin
@@ -67,6 +70,7 @@ typescript.setup({
   server = {
     capabilities = capabilities,
     on_attach = on_attach,
+    flags = flags,
   },
 })
 
@@ -74,12 +78,14 @@ typescript.setup({
 lspconfig["cssls"].setup({
   capabilities = capabilities,
   on_attach = on_attach,
+  flags = flags,
 })
 
 -- configure tailwindcss server
 lspconfig["tailwindcss"].setup({
   capabilities = capabilities,
   on_attach = on_attach,
+  flags = flags,
 })
 
 -- configure emmet language server
@@ -87,12 +93,14 @@ lspconfig["emmet_ls"].setup({
   capabilities = capabilities,
   on_attach = on_attach,
   filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte" },
+  flags = flags,
 })
 
 -- configure lua server (with special settings)
 lspconfig["sumneko_lua"].setup({
   capabilities = capabilities,
   on_attach = on_attach,
+  flags = flags,
   settings = { -- custom settings for lua
     Lua = {
       -- make the language server recognize "vim" global
@@ -114,4 +122,5 @@ lspconfig["sumneko_lua"].setup({
 lspconfig["intelephense"].setup({
   capabilities = capabilities,
   on_attach = on_attach,
+  flags = flags,
 })

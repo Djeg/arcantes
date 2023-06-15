@@ -9,6 +9,15 @@ keymap.set("v", "<C-l>", "w")
 keymap.set("v", "<C-h>", "b")
 keymap.set("v", "<C-j>", "4j")
 keymap.set("v", "<C-k>", "4k")
+-- Same bu for mac os using command
+keymap.set("n", "<D-l>", "w")
+keymap.set("n", "<D-h>", "b")
+keymap.set("n", "<D-j>", "4j")
+keymap.set("n", "<D-k>", "4k")
+keymap.set("v", "<D-l>", "w")
+keymap.set("v", "<D-h>", "b")
+keymap.set("v", "<D-j>", "4j")
+keymap.set("v", "<D-k>", "4k")
 
 -- select all
 keymap.set("n", "<leader>a", "gg<S-v><S-g><CR>")

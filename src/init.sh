@@ -8,6 +8,12 @@ then
   export $(cat .env | xargs)
 fi
 
+# Copy/Past the localrc file used to put confidential informations
+if [ ! -f .localrc ]
+then
+  cp .localrc.dist .localrc
+fi
+
 # Setup usefull variables
 DIR="$( cd "$( dirname "$0" )" && pwd )" # current working directory
 CONFIG_DIR=$HOME/.config
@@ -25,8 +31,8 @@ source src/configuration.sh
 # Define the initialization function
 init()
 {
-  welcome
-  setupFolders
-  installPackages
+  # welcome
+  # setupFolders
+  # installPackages
   configuration
 }

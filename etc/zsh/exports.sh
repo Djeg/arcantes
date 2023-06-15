@@ -11,6 +11,8 @@ export TERM=screen-256color-bce
 
 # Project folder
 export PROJECT_FOLDER="$HOME/Projects"
+export PROJECT="$HOME/Projects"
+export PROJECTS="$HOME/Projects"
 
 # SSH Folder
 export SSH_FOLDER="$HOME/.ssh"

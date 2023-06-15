@@ -37,6 +37,7 @@ set -g status-position top
 set -g status-fg colour250
 set -g status-bg colour233
 set -g status off
+set -g mouse on
 
 # left side of status bar
 set -g status-left-length 10

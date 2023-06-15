@@ -1,0 +1,4 @@
+# Put here your personnal and confidentials data used by zsh (such as confidential env vars etc ...)
+
+# Exemple :
+# export GITHUB_TOKEN=myPersonnalGithubToken :)

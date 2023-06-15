@@ -204,7 +204,7 @@
   "Creates an nanostore atom": {
     "prefix": "nat",
     "description": "Create a nanostore atom",
-    "body": ["export const \\$${1:name} = atom<${2:Type}>($3)$0"]
+    "body": ["export const ${1:Name}Store = atom<${2:Type}>($3)$0"]
   },
   "Creates a documented nanostore atom": {
     "prefix": "natd",
@@ -213,13 +213,13 @@
       "/**",
       " * $1",
       " */",
-      "export const \\$${2:name} = atom<${3:Type}>($4)$0"
+      "export const ${2:Name}Store = atom<${3:Type}>($4)$0"
     ]
   },
   "Creates a nanostore map": {
     "prefix": "nmap",
     "description": "Creates a nanostore map",
-    "body": ["export const \\$${1:name} = map<${2:Type}>({", "\t$0", "})"]
+    "body": ["export const ${1:Name}Store = map<${2:Type}>({", "\t$0", "})"]
   },
   "Creates a documented nanostore map": {
     "prefix": "nmapd",
@@ -228,7 +228,7 @@
       "/**",
       " * $1",
       " */",
-      "export const \\$${2:name} = map<${3:Type}>({",
+      "export const ${2:Name}Store = map<${3:Type}>({",
       "\t$0",
       "})"
     ]
@@ -338,27 +338,5 @@
     "prefix": "intd",
     "description": "Genereate a documented typescript interface",
     "body": ["/**", " * $1", " */", "export interface ${1:Name} {", "\t$0", "}"]
-  },
-  "Generate a zod object schema": {
-    "prefix": "zobj",
-    "description": "Generate a zod object schema",
-    "body": ["export const ${1:name}Schema = z.object({", "\t$0", "})"]
-  },
-  "Generate a documented zod object schema": {
-    "prefix": "zobj",
-    "description": "Generate a documented zod object schema",
-    "body": [
-      "/**",
-      " * $1",
-      " $/",
-      "export const ${2:name}Schema = z.object({",
-      "\t$0",
-      "})"
-    ]
-  },
-  "Jest describe test": {
-    "prefix": "desc",
-    "description": "Describe a jest test",
-    "body": ["describe('$1', () => {", "\t$O", "}) "]
   }
 }

@@ -26,7 +26,6 @@ end
 require("luasnip/loaders/from_vscode").lazy_load()
 
 vim.opt.completeopt = "menu,menuone,noselect"
-local select_opts = { behavior = cmp.SelectBehavior.Select }
 
 cmp.setup({
   snippet = {
@@ -77,7 +76,7 @@ cmp.setup({
   }),
   -- sources for autocompletion
   sources = cmp.config.sources({
-    { name = "nvim_lsp" }, -- lsp
+    { name = "nvim_lsp", max_item_count = 30 }, -- lsp
     { name = "luasnip" }, -- snippets
     { name = "buffer" }, -- text within current buffer
     { name = "path" }, -- file system paths

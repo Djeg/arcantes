@@ -85,6 +85,13 @@ zshConfig()
 
   ln -s $ZSH_DIR/zshrc $ZSHRC
 
+  if [[ -f $HOME/.localrc ]]
+  then
+    rm $HOME/.localrc
+  fi
+
+  ln -s $DIR/.localrc $HOME/.localrc
+
   echo "> done"
 }
 
@@ -313,14 +320,14 @@ configuration()
   echo ""
   echo ""
 
-  gitConfig
+  # gitConfig
   zshConfig
-  nvimConfig
-  tmuxConfig
-  fontConfig
-  dockerConfig
-  devFileConfig
-  binConfig
-  codeConfig
-  kittyConfig
+  # nvimConfig
+  # tmuxConfig
+  # fontConfig
+  # dockerConfig
+  # devFileConfig
+  # binConfig
+  # codeConfig
+  # kittyConfig
 }
