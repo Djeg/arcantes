@@ -80,4 +80,5 @@ source $ZSH/oh-my-zsh.sh
 # loading custom file
 source $ZSH_CONFIG/exports.sh
 source $ZSH_CONFIG/aliases.sh
+source $ZSH_CONFIG/prompt.sh
 source $HOME/.localrc

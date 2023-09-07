@@ -1,6 +1,6 @@
 [
   {
-    "key": "ctrl+alt+b",
+    "key": "ctrl+shift+b",
     "command": "workbench.action.toggleSidebarVisibility"
   },
   {
@@ -16,7 +16,7 @@
     "command": "-workbench.action.togglePanel"
   },
   {
-    "key": "alt+a",
+    "key": "ctrl+shift+-",
     "command": "create.new"
   },
   {
@@ -40,5 +40,133 @@
     "key": "f12",
     "command": "-editor.action.revealDefinition",
     "when": "editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor"
+  },
+  {
+    "key": "ctrl+p",
+    "command": "workbench.action.quickOpenNavigateNextInFilePicker",
+    "when": "inFilesPicker && inQuickOpen"
+  },
+  {
+    "key": "cmd+p",
+    "command": "-workbench.action.quickOpenNavigateNextInFilePicker",
+    "when": "inFilesPicker && inQuickOpen"
+  },
+  {
+    "key": "ctrl+p",
+    "command": "workbench.action.quickOpen"
+  },
+  {
+    "key": "cmd+p",
+    "command": "-workbench.action.quickOpen"
+  },
+  {
+    "key": "ctrl+shift+p",
+    "command": "workbench.action.showCommands"
+  },
+  {
+    "key": "shift+cmd+p",
+    "command": "-workbench.action.showCommands"
+  },
+  {
+    "key": "ctrl+shift+t",
+    "command": "workbench.action.terminal.toggleTerminal",
+    "when": "terminal.active"
+  },
+  {
+    "key": "ctrl+`",
+    "command": "-workbench.action.terminal.toggleTerminal",
+    "when": "terminal.active"
+  },
+  {
+    "key": "cmd+b",
+    "command": "-workbench.action.toggleSidebarVisibility"
+  },
+  {
+    "key": "ctrl+shift+s",
+    "command": "editor.action.triggerParameterHints",
+    "when": "editorHasSignatureHelpProvider && editorTextFocus"
+  },
+  {
+    "key": "shift+cmd+space",
+    "command": "-editor.action.triggerParameterHints",
+    "when": "editorHasSignatureHelpProvider && editorTextFocus"
+  },
+  {
+    "key": "ctrl+shift+d",
+    "command": "editor.action.revealDefinition",
+    "when": "editorHasDefinitionProvider && editorTextFocus && isWeb && !isInEmbeddedEditor"
+  },
+  {
+    "key": "cmd+f12",
+    "command": "-editor.action.revealDefinition",
+    "when": "editorHasDefinitionProvider && editorTextFocus && isWeb && !isInEmbeddedEditor"
+  },
+  {
+    "key": "ctrl+shift+[IntlBackslash]",
+    "command": "editor.action.peekDefinition",
+    "when": "editorHasDefinitionProvider && editorTextFocus && !inReferenceSearchEditor && !isInEmbeddedEditor"
+  },
+  {
+    "key": "alt+f12",
+    "command": "-editor.action.peekDefinition",
+    "when": "editorHasDefinitionProvider && editorTextFocus && !inReferenceSearchEditor && !isInEmbeddedEditor"
+  },
+  {
+    "key": "shift+cmd+[BracketRight]",
+    "command": "workbench.action.terminal.selectAll",
+    "when": "terminalFocusInAny && terminalHasBeenCreated || terminalFocusInAny && terminalProcessSupported"
+  },
+  {
+    "key": "cmd+a",
+    "command": "-workbench.action.terminal.selectAll",
+    "when": "terminalFocusInAny && terminalHasBeenCreated || terminalFocusInAny && terminalProcessSupported"
+  },
+  {
+    "key": "shift+cmd+[BracketRight]",
+    "command": "editor.action.selectAll"
+  },
+  {
+    "key": "cmd+a",
+    "command": "-editor.action.selectAll"
+  },
+  {
+    "key": "shift+cmd+[BracketRight]",
+    "command": "extension.vim_cmd+a",
+    "when": "editorTextFocus && vim.active && vim.use<D-a> && !inDebugRepl && vim.mode != 'Insert'"
+  },
+  {
+    "key": "cmd+a",
+    "command": "-extension.vim_cmd+a",
+    "when": "editorTextFocus && vim.active && vim.use<D-a> && !inDebugRepl && vim.mode != 'Insert'"
+  },
+  {
+    "key": "shift+cmd+[BracketRight]",
+    "command": "list.selectAll",
+    "when": "listFocus && listSupportsMultiselect && !inputFocus"
+  },
+  {
+    "key": "cmd+a",
+    "command": "-list.selectAll",
+    "when": "listFocus && listSupportsMultiselect && !inputFocus"
+  },
+  {
+    "key": "ctrl+shift+cmd+s",
+    "command": "workbench.scm.focus"
+  },
+  {
+    "key": "ctrl+shift+cmd+f",
+    "command": "workbench.files.action.focusFilesExplorer"
+  },
+  {
+    "key": "ctrl+shift+cmd+b",
+    "command": "git.checkout"
+  },
+  {
+    "key": "cmd+a",
+    "command": "extension.simpleNewFile"
+  },
+  {
+    "key": "alt+cmd+n",
+    "command": "-extension.simpleNewFile"
   }
 ]

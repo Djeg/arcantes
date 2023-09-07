@@ -2,11 +2,6 @@ set-option -g default-terminal screen-256color-bce
 set-option -g default-shell /bin/zsh
 set-option -sg escape-time 10
 
-# rebind default keys
-set -g prefix M-a
-unbind C-b
-bind M-a send-prefix
-
 # split window
 bind v split-window -h -c "#{pane_current_path}"
 bind s split-window -v -c "#{pane_current_path}"
@@ -16,6 +11,10 @@ bind h select-pane -L
 bind j select-pane -D
 bind k select-pane -U
 bind l select-pane -R
+bind $ list-sessions
+bind - command-prompt -p find-session 'switch-client -t %%'
+bind ù command-prompt -p rename-session 'rename-session %%'
+
 
 # Bind new window on current directory
 bind c new-window -c "#{pane_current_path}"

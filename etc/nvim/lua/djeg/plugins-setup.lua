@@ -34,6 +34,7 @@ return packer.startup(function(use)
   use("patstockwell/vim-monokai-tasty") -- molokai colorscheme
   use("tomasr/molokai") -- an other molokai theme
   use("crusoexia/vim-monokai") -- other molokai theme
+  use("folke/tokyonight.nvim") -- tokyo night theme
 
   -- project tree
   use("nvim-tree/nvim-tree.lua")
@@ -58,6 +59,7 @@ return packer.startup(function(use)
     "nvim-telescope/telescope-file-browser.nvim",
     require = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
   })
+  use("nvim-telescope/telescope-live-grep-args.nvim")
 
   -- automatically creates folders on file save
   use("jghauser/mkdir.nvim")

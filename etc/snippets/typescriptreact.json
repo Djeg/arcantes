@@ -359,6 +359,35 @@
   "Jest describe test": {
     "prefix": "desc",
     "description": "Describe a jest test",
-    "body": ["describe('$1', () => {", "\t$O", "}) "]
+    "body": ["describe('$1', () => {", "\t$0", "}) "]
+  },
+  "Jest creates a case": {
+    "prefix": "jit",
+    "description": "Creates a test case",
+    "body": ["it('$1', ${2:async }() => {", "\t$0", "}) "]
+  },
+  "Creates an « O » component": {
+    "prefix": "orec",
+    "description": "Creates an « O » component",
+    "body": [
+      "export function ${1:$TM_FILENAME_BASE}(): ${2:ReactElement} {",
+      "\t$0",
+      "}"
+    ]
+  },
+  "Creates an « O » component with props": {
+    "prefix": "orecp",
+    "description": "Creates an « O » component with props",
+    "body": [
+      "export interface ${1:$TM_FILENAME_BASE}Props {",
+      "\t${3:name: type;}",
+      "}",
+      "",
+      "export function $1({",
+      "\t${3/(.*)\\:(.*)/$1,/g}",
+      "}: $1Props): ${2:ReactElement} {",
+      "\t$0",
+      "}"
+    ]
   }
 }

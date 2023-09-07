@@ -13,6 +13,7 @@
   editor = nvim
   excludesfile = ~/.gitignore
   autocrlf = input
+	compression = 0
 
 [alias]
   st = status

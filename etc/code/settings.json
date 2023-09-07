@@ -1,8 +1,9 @@
 {
   "window.menuBarVisibility": "toggle",
-  "workbench.colorTheme": "One Dark Pro Darker",
+  "workbench.colorTheme": "Monokai Pro (Filter Machine)",
   "workbench.startupEditor": "none",
-  "editor.fontFamily": "'Menlo', 'FiraCode Nerd Font', 'Droid Sans Mono', 'monospace', monospace",
+  "editor.fontFamily": "'FiraCode Nerd Font', 'Menlo', 'Droid Sans Mono', 'monospace', monospace",
+  "editor.fontSize": 16,
   "breadcrumbs.enabled": false,
   "workbench.editor.showTabs": false,
   "security.workspace.trust.untrustedFiles": "open",
@@ -30,6 +31,86 @@
     {
       "before": ["<C-j>"],
       "after": ["4", "j"]
+    },
+    {
+      "before": ["<leader>", "r", "n"],
+      "after": [],
+      "commands": [
+        {
+          "command": "editor.action.rename",
+          "args": []
+        }
+      ]
+    },
+    {
+      "before": ["<leader>", "d", "f"],
+      "after": [],
+      "commands": [
+        {
+          "command": "editor.action.showDefinitionPreviewHover",
+          "args": []
+        }
+      ]
+    },
+    {
+      "before": ["<leader>", "g", "d"],
+      "after": [],
+      "commands": [
+        {
+          "command": "editor.action.peekTypeDefinition",
+          "args": []
+        }
+      ]
+    },
+    {
+      "before": ["<leader>", "g", "i"],
+      "after": [],
+      "commands": [
+        {
+          "command": "editor.action.revealDefinition",
+          "args": []
+        }
+      ]
+    },
+    {
+      "before": ["<leader>", "n", "f"],
+      "after": [],
+      "commands": [
+        {
+          "command": "workbench.files.action.focusFilesExplorer",
+          "args": []
+        }
+      ]
+    },
+    {
+      "before": ["<leader>", "f"],
+      "after": [],
+      "commands": [
+        {
+          "command": "filesExplorer.findInFolder",
+          "args": []
+        }
+      ]
+    },
+    {
+      "before": ["<leader>", "r", "u"],
+      "after": [],
+      "commands": [
+        {
+          "command": "typescript.removeUnusedImports",
+          "args": []
+        }
+      ]
+    },
+    {
+      "before": ["<leader>", "q"],
+      "after": [],
+      "commands": [
+        {
+          "command": "workbench.action.closeAllGroups",
+          "args": []
+        }
+      ]
     }
   ],
   "vim.visualModeKeyBindings": [
@@ -84,6 +165,19 @@
   "githubPullRequests.remotes": ["origin", "upstream", "gitorigin"],
   "github.gitAuthentication": true,
   "githubPullRequests.logLevel": "debug",
-  "window.zoomLevel": 2,
-  "workbench.activityBar.visible": false
+  "workbench.activityBar.visible": false,
+  "terminal.integrated.fontSize": 16,
+  "terminal.integrated.shellIntegration.enabled": true,
+  "terminal.external.linuxExec": "zsh",
+  "terminal.external.osxExec": "zsh",
+  "workbench.iconTheme": "Monokai Pro (Filter Machine) Icons",
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "advancedNewFile.exclude": {
+    "node_modules": true,
+    "node_modules_electron": true,
+    "dev": true,
+    "dist": true
+  },
+  "advancedNewFile.showInformationMessages": true,
+  "advancedNewFile.convenienceOptions": ["last", "current", "root"]
 }
