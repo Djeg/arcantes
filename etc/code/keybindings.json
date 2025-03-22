@@ -24,7 +24,7 @@
     "command": "-create.new"
   },
   {
-    "key": "ctrl+a ctrl+w",
+    "key": "ctrl+q",
     "command": "workbench.action.closeEditorsInGroup"
   },
   {
@@ -150,7 +150,7 @@
     "when": "listFocus && listSupportsMultiselect && !inputFocus"
   },
   {
-    "key": "ctrl+shift+cmd+s",
+    "key": "shift+cmd+g",
     "command": "workbench.scm.focus"
   },
   {
@@ -158,15 +158,63 @@
     "command": "workbench.files.action.focusFilesExplorer"
   },
   {
-    "key": "ctrl+shift+cmd+b",
+    "key": "ctrl+cmd+b",
     "command": "git.checkout"
   },
   {
-    "key": "cmd+a",
+    "key": "ctrl+a",
     "command": "extension.simpleNewFile"
   },
   {
     "key": "alt+cmd+n",
     "command": "-extension.simpleNewFile"
+  },
+  {
+    "key": "ctrl+shift+cmd+0",
+    "command": "editor.action.marker.next",
+    "when": "editorFocus"
+  },
+  {
+    "key": "alt+f8",
+    "command": "-editor.action.marker.next",
+    "when": "editorFocus"
+  },
+  {
+    "key": "shift+alt+cmd+g",
+    "command": "workbench.action.terminal.findPrevious",
+    "when": "terminalFindFocused && terminalHasBeenCreated || terminalFindFocused && terminalProcessSupported || terminalFocusInAny && terminalHasBeenCreated || terminalFocusInAny && terminalProcessSupported"
+  },
+  {
+    "key": "shift+cmd+g",
+    "command": "-workbench.action.terminal.findPrevious",
+    "when": "terminalFindFocused && terminalHasBeenCreated || terminalFindFocused && terminalProcessSupported || terminalFocusInAny && terminalHasBeenCreated || terminalFocusInAny && terminalProcessSupported"
+  },
+  {
+    "key": "shift+alt+cmd+g",
+    "command": "workbench.action.terminal.openDetectedLink",
+    "when": "accessibleViewIsShown && terminalHasBeenCreated && accessibleViewCurrentProviderId == 'terminal'"
+  },
+  {
+    "key": "shift+cmd+g",
+    "command": "-workbench.action.terminal.openDetectedLink",
+    "when": "accessibleViewIsShown && terminalHasBeenCreated && accessibleViewCurrentProviderId == 'terminal'"
+  },
+  {
+    "key": "shift+alt+cmd+g",
+    "command": "editor.action.previousMatchFindAction",
+    "when": "editorFocus"
+  },
+  {
+    "key": "shift+cmd+g",
+    "command": "-editor.action.previousMatchFindAction",
+    "when": "editorFocus"
+  },
+  {
+    "key": "ctrl+shift+n",
+    "command": "create.newFromCurrent"
+  },
+  {
+    "key": "shift+alt+cmd+o",
+    "command": "-create.newFromCurrent"
   }
 ]

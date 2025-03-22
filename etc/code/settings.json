@@ -1,13 +1,16 @@
 {
   "window.menuBarVisibility": "toggle",
-  "workbench.colorTheme": "Monokai Pro (Filter Machine)",
+  "workbench.statusBar.visible": false,
   "workbench.startupEditor": "none",
   "editor.fontFamily": "'FiraCode Nerd Font', 'Menlo', 'Droid Sans Mono', 'monospace', monospace",
-  "editor.fontSize": 16,
+  "editor.fontSize": 14,
+  "editor.rulers": [80],
+  "editor.fontWeight": 525,
+  "editor.fontLigatures": true,
+  "editor.fontVariations": false,
   "breadcrumbs.enabled": false,
-  "workbench.editor.showTabs": false,
+  "workbench.editor.showTabs": "none",
   "security.workspace.trust.untrustedFiles": "open",
-  "editor.minimap.enabled": false,
   // Vim configuration
   "vim.easymotion": true,
   "vim.incsearch": true,
@@ -15,6 +18,7 @@
   "vim.useCtrlKeys": true,
   "vim.hlsearch": true,
   "vim.insertModeKeyBindings": [],
+  "vim.smartRelativeLine": true,
   "vim.normalModeKeyBindingsNonRecursive": [
     {
       "before": ["<C-l>"],
@@ -83,34 +87,76 @@
       ]
     },
     {
-      "before": ["<leader>", "f"],
+      "before": ["<leader>", "f", "w"],
       "after": [],
-      "commands": [
-        {
-          "command": "filesExplorer.findInFolder",
-          "args": []
-        }
-      ]
+      "commands": ["references-view.findReferences"]
+    },
+    {
+      "before": ["<leader>", "f", "r"],
+      "after": [],
+      "commands": ["workbench.action.findInFiles"]
+    },
+    {
+      "before": ["<leader>", "f", "w"],
+      "after": [],
+      "commands": ["references-view.findReferences"]
     },
     {
       "before": ["<leader>", "r", "u"],
       "after": [],
-      "commands": [
-        {
-          "command": "typescript.removeUnusedImports",
-          "args": []
-        }
-      ]
+      "commands": ["typescript.removeUnusedImports"]
     },
     {
       "before": ["<leader>", "q"],
       "after": [],
+      "commands": ["workbench.action.closeEditorsInGroup"]
+    },
+    {
+      "before": ["<leader>", "i", "p"],
+      "after": ["w"],
+      "commands": ["editor.action.triggerSuggest"]
+    },
+    {
+      "before": ["<leader>", "e", "n"],
       "commands": [
         {
-          "command": "workbench.action.closeAllGroups",
-          "args": []
+          "command": "editor.action.marker.next",
+          "when": "editorFocus"
         }
       ]
+    },
+    {
+      "before": ["<leader>", "a", "i", "p"],
+      "after": [],
+      "commands": [
+        {
+          "command": "editor.action.sourceAction",
+          "args": {
+            "kind": "source.addMissingImports",
+            "apply": "first"
+          }
+        }
+      ]
+    },
+    {
+      "before": ["<leader>", "c", "s"],
+      "commands": [
+        {
+          "command": "workbench.action.toggleSidebarVisibility"
+        }
+      ]
+    },
+    {
+      "before": ["<leader>", "g", "b"],
+      "commands": ["git.checkout"]
+    },
+    {
+      "before": ["<leader>", "n", "s"],
+      "commands": ["workbench.scm.focus"]
+    },
+    {
+      "before": ["<leader>", "c", "c"],
+      "commands": ["editor.action.showOrFocusStandaloneColorPicker"]
     }
   ],
   "vim.visualModeKeyBindings": [
@@ -165,19 +211,55 @@
   "githubPullRequests.remotes": ["origin", "upstream", "gitorigin"],
   "github.gitAuthentication": true,
   "githubPullRequests.logLevel": "debug",
-  "workbench.activityBar.visible": false,
-  "terminal.integrated.fontSize": 16,
+  "terminal.integrated.fontSize": 14,
+  "terminal.integrated.fontFamily": "FiraCode Nerd Font",
+  "terminal.integrated.fontWeight": 500,
+  "terminal.integrated.lineHeight": 1,
   "terminal.integrated.shellIntegration.enabled": true,
   "terminal.external.linuxExec": "zsh",
   "terminal.external.osxExec": "zsh",
-  "workbench.iconTheme": "Monokai Pro (Filter Machine) Icons",
+  "workbench.iconTheme": "material-icon-theme",
   "typescript.updateImportsOnFileMove.enabled": "always",
-  "advancedNewFile.exclude": {
-    "node_modules": true,
-    "node_modules_electron": true,
-    "dev": true,
-    "dist": true
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "explorer.confirmDragAndDrop": false,
+  "window.commandCenter": false,
+  "editor.inlayHints.padding": true,
+  "javascript.inlayHints.parameterNames.enabled": "all",
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "advancedNewFile.showInformationMessages": true,
-  "advancedNewFile.convenienceOptions": ["last", "current", "root"]
+  "typescript.inlayHints.parameterNames.suppressWhenArgumentMatchesName": false,
+  "workbench.activityBar.location": "hidden",
+  "terminal.integrated.minimumContrastRatio": 1,
+  "rust-analyzer.lens.debug.enable": false,
+  "rust-analyzer.lens.enable": false,
+  "editor.codeLens": false,
+  "rust-analyzer.inlayHints.closingBraceHints.enable": false,
+  "rust-analyzer.inlayHints.renderColons": false,
+  "rust-analyzer.inlayHints.typeHints.enable": false,
+  "rust-analyzer.inlayHints.chainingHints.enable": false,
+  "rust-analyzer.inlayHints.closureStyle": "hide",
+  "rust-analyzer.inlayHints.parameterHints.enable": false,
+  "zenMode.showTabs": "none",
+  "zenMode.hideLineNumbers": true,
+  "vscode_vibrancy.opacity": 0,
+  "vscode_vibrancy.theme": "Custom theme (use imports)",
+  "vscode_vibrancy.imports": ["/Users/djeg/.config/custom-theme.css"],
+  "window.zoomLevel": 2,
+  "terminal.integrated.gpuAcceleration": "off",
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": "explicit",
+    "source.fixAll": "explicit",
+    "source.removeUnusedImports": "explicit"
+  },
+  "workbench.colorTheme": "Theme Flat",
+  "workbench.colorCustomizations": {
+    "terminal.background": "#00000000"
+  },
+  "workbench.settings.applyToAllProfiles": ["workbench.colorCustomizations"],
+  "editor.columnSelection": false,
+  "editor.minimap.enabled": false,
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }

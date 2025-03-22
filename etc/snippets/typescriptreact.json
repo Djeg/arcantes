@@ -2,12 +2,48 @@
   "Creates a const functions without any arguments": {
     "prefix": "cf",
     "description": "Creates a const functions without any arguments",
-    "body": ["export const ${1:name} = ${2:async }($3) => {", "\t$0", "}"]
+    "body": [
+      "export const ${1:name} = ${2:async }($3) => {",
+      "\t$0",
+      "}"
+    ]
   },
   "Creates a const functions without any arguments and a signle return": {
     "prefix": "cfr",
     "description": "Creates a const functions without any arguments and a single return",
-    "body": ["export const ${1:name} = ${2:async }($3) => $0"]
+    "body": [
+      "export const ${1:name} = ${2:async }($3) => $0"
+    ]
+  },
+  "Creates an F0 from funky": {
+    "prefix": "f0",
+    "description": "Creates an F0 from funky",
+    "body": [
+      "/**",
+      " * $1",
+      " */",
+      "export const ${2:name}: F0<${3:string}> = () => $0"
+    ]
+  },
+  "Creates an F1 from funky": {
+    "prefix": "f1",
+    "description": "Creates an F1 from funky",
+    "body": [
+      "/**",
+      " * $1",
+      " */",
+      "export const ${2:name}: F1<${3:string}, ${4:string}> = ${5:arg} => $0"
+    ]
+  },
+  "Creates an F2 from funky": {
+    "prefix": "f2",
+    "description": "Creates an F2 from funky",
+    "body": [
+      "/**",
+      " * $1",
+      " */",
+      "export const ${2:name}: F2<${3:string}, ${4:string}, ${5:string}> = (${6:arg1}, ${7:arg2}) => $0"
+    ]
   },
   "Creates a documented precompiled function": {
     "prefix": "fund",
@@ -16,7 +52,7 @@
       "/**",
       " * $1",
       " */",
-      "export ${4:async }function ${2:name}($3) {",
+      "export function ${2:name}() {",
       "\t$0",
       "}"
     ]
@@ -72,13 +108,17 @@
   "Creates a precompiled function": {
     "prefix": "fun",
     "description": "Creates a precompiled function",
-    "body": ["export ${3:async }function ${1:name}($2) {", "\t$0", "}"]
+    "body": [
+      "export function ${1:name}($2) {",
+      "\t$0",
+      "}"
+    ]
   },
   "Creates a precompiled function of 1 argument": {
     "prefix": "fun1",
     "description": "Creates a precompiled function of 1 argument",
     "body": [
-      "export ${4:async }function ${1:name}(${2:name1}: ${3:string}) {",
+      "export function ${1:name}(${2:name1}: ${3:string}) {",
       "\t$0",
       "}"
     ]
@@ -87,7 +127,7 @@
     "prefix": "fun2",
     "description": "Creates a precompiled function of 2 arguments",
     "body": [
-      "export ${6:async }function ${1:name}(${2:name1}: ${3:string}, ${4:name2}: ${5:string}) {",
+      "export function ${1:name}(${2:name1}: ${3:string}, ${4:name2}: ${5:string}) {",
       "\t$0",
       "}"
     ]
@@ -110,7 +150,6 @@
       "}"
     ]
   },
-
   "Creates a documented function callback": {
     "prefix": "fnd",
     "description": "Creates a documented function callback",
@@ -126,7 +165,11 @@
   "Creates a function callback": {
     "prefix": "fn",
     "description": "Creates a function callback",
-    "body": ["export const ${1:name} = ($2) => {", "\t$0", "}"]
+    "body": [
+      "export const ${1:name} = ($2) => {",
+      "\t$0",
+      "}"
+    ]
   },
   "Creates a documented react component": {
     "prefix": "recd",
@@ -135,7 +178,7 @@
       "/**",
       " * $1",
       " */",
-      "export default function ${TM_FILENAME_BASE}() {",
+      "export function ${TM_FILENAME_BASE}() {",
       "\t$0",
       "}"
     ]
@@ -143,12 +186,18 @@
   "Creates a react component": {
     "prefix": "rec",
     "description": "Creates and export a documented react",
-    "body": ["export default function ${TM_FILENAME_BASE}() {", "\t$0", "}"]
+    "body": [
+      "export function ${TM_FILENAME_BASE}() {",
+      "\t$0",
+      "}"
+    ]
   },
   "Creates a react context": {
     "prefix": "rcon",
     "description": "Creates a react context",
-    "body": ["export const ${1:Name}Context = createContext<${2:Type}>($3)"]
+    "body": [
+      "export const ${1:Name}Context = createContext<${2:Type}>($3)"
+    ]
   },
   "Creates a documented react context": {
     "prefix": "rcond",
@@ -182,7 +231,11 @@
   "Creates a new styled react component": {
     "prefix": "stc",
     "description": "Creates a styled component",
-    "body": ["export const ${1:Name} = styled.${2:div}`", "\t$0", "`"]
+    "body": [
+      "export const ${1:Name} = styled.${2:div}`",
+      "\t$0",
+      "`"
+    ]
   },
   "Creates a documented global styled react component": {
     "prefix": "stgd",
@@ -199,12 +252,18 @@
   "Creates a global styled react component": {
     "prefix": "stg",
     "description": "Creates a global styled component",
-    "body": ["export const ${1:GlobalStyle} = createGlobalStyle`", "\t$0", "`"]
+    "body": [
+      "export const ${1:GlobalStyle} = createGlobalStyle`",
+      "\t$0",
+      "`"
+    ]
   },
   "Creates an nanostore atom": {
     "prefix": "nat",
     "description": "Create a nanostore atom",
-    "body": ["export const \\$${1:name} = atom<${2:Type}>($3)$0"]
+    "body": [
+      "export const \\$${1:name} = atom<${2:Type}>($3)$0"
+    ]
   },
   "Creates a documented nanostore atom": {
     "prefix": "natd",
@@ -219,7 +278,11 @@
   "Creates a nanostore map": {
     "prefix": "nmap",
     "description": "Creates a nanostore map",
-    "body": ["export const \\$${1:name} = map<${2:Type}>({", "\t$0", "})"]
+    "body": [
+      "export const \\$${1:name} = map<${2:Type}>({",
+      "\t$0",
+      "})"
+    ]
   },
   "Creates a documented nanostore map": {
     "prefix": "nmapd",
@@ -299,19 +362,30 @@
   "Creates a nanostore on mount effect": {
     "prefix": "nmo",
     "description": "Creates a nanostore onMount event effect",
-    "body": ["onMount(${1:Store}, () => {", "\t$0", "})"]
+    "body": [
+      "onMount(${1:Store}, () => {",
+      "\t$0",
+      "})"
+    ]
   },
   "Creates a documented nanostore on mount effect": {
     "prefix": "nmod",
     "description": "Creates a documented nanostore onMount event effect",
-    "body": ["/**", " * $1", " */", "onMount(${2:Store}, () => {", "\t$0", "})"]
+    "body": [
+      "/**",
+      " * $1",
+      " */",
+      "onMount(${2:Store}, () => {",
+      "\t$0",
+      "})"
+    ]
   },
   "Génére une description de module": {
     "prefix": "modoc",
     "description": "Generate a module description",
     "body": [
       "/**",
-      " * @module ${TM_FILENAME_BASE}",
+      " * @module ${RELATIVE_FILEPATH/.*\\/(.*)\\/src\\/(.*)\\.[a-z]+/$1\\/$2/}",
       " *",
       " * @description",
       " *  $1",
@@ -322,49 +396,187 @@
   "Génére un type typescript": {
     "prefix": "ty",
     "description": "Generate a typescript type",
-    "body": ["export type ${1:Name} = $0"]
+    "body": [
+      "export type ${1:Name} = $0"
+    ]
   },
   "Génére un type typescript documenté": {
     "prefix": "tyd",
     "description": "Generate a documented typescript type",
-    "body": ["/**", " * $1", " */", "export type ${2:Name} = $0"]
+    "body": [
+      "/**",
+      " * $1",
+      " */",
+      "export type ${2:Name} = $0"
+    ]
+  },
+  "Génére une enum typescript": {
+    "prefix": "enu",
+    "description": "Generate a typescript enum",
+    "body": [
+      "export enum ${1:Name} {",
+      "\t$0",
+      "}"
+    ]
+  },
+  "Génére une enum typescript documenté": {
+    "prefix": "enud",
+    "description": "Generate a documented typescript enum",
+    "body": [
+      "/**",
+      " * $1",
+      " */",
+      "export enum ${2:Name} {",
+      "\t$0",
+      "}"
+    ]
   },
   "Generate an interface": {
     "prefix": "int",
     "description": "Genereate a typescript interface",
-    "body": ["export interface ${1:Name} {", "\t$0", "}"]
+    "body": [
+      "export interface ${1:Name} {",
+      "\t$0",
+      "}"
+    ]
   },
   "Generate a documented interface": {
     "prefix": "intd",
     "description": "Genereate a documented typescript interface",
-    "body": ["/**", " * $1", " */", "export interface ${1:Name} {", "\t$0", "}"]
+    "body": [
+      "/**",
+      " * $1",
+      " */",
+      "export interface ${1:Name} {",
+      "\t$0",
+      "}"
+    ]
   },
   "Generate a zod object schema": {
     "prefix": "zobj",
     "description": "Generate a zod object schema",
-    "body": ["export const ${1:name}Schema = z.object({", "\t$0", "})"]
+    "body": [
+      "import { z } from 'zod'",
+      "",
+      "export const ${1:name}Schema = z.object({",
+      "\t$0",
+      "})",
+      "",
+      "export type ${1/(.*)/${1:/capitalize}/}Input = z.input<typeof $1Schema>",
+      "",
+      "export type ${1/(.*)/${1:/capitalize}/} = z.infer<typeof $1Schema>"
+    ]
   },
   "Generate a documented zod object schema": {
-    "prefix": "zobj",
+    "prefix": "zobjd",
     "description": "Generate a documented zod object schema",
     "body": [
       "/**",
-      " * $1",
-      " $/",
+      " * $1 schema",
+      " */",
       "export const ${2:name}Schema = z.object({",
       "\t$0",
-      "})"
+      "})",
+      "",
+      "/**",
+      " * $1",
+      " */",
+      "export type ${2/(.*)/${2:/capitalize}/}Input = z.input<typeof $2Schema>",
+      "",
+      "/**",
+      " * $1",
+      " */",
+      "export type ${2/(.*)/${2:/capitalize}/} = z.infer<typeof $2Schema>"
+    ]
+  },
+  "Generate a zod union schema": {
+    "prefix": "zuni",
+    "description": "Generate a zod union schema",
+    "body": [
+      "export const ${1:name}Schema = z.union([$0])",
+      "",
+      "export type ${1/(.*)/${1:/capitalize}/}Input = z.input<typeof $1Schema>",
+      "",
+      "export type ${1/(.*)/${1:/capitalize}/} = z.infer<typeof $1Schema>"
+    ]
+  },
+  "Generate a documented zod union schema": {
+    "prefix": "zunid",
+    "description": "Generate a documented zod union schema",
+    "body": [
+      "/**",
+      " * $1 schema",
+      " */",
+      "export const ${2:name}Schema = z.union([$0])",
+      "",
+      "/**",
+      " * $1",
+      " */",
+      "export type ${2/(.*)/${2:/capitalize}/}Input = z.input<typeof $2Schema>",
+      "",
+      "/**",
+      " * $1",
+      " */",
+      "export type ${2/(.*)/${2:/capitalize}/} = z.infer<typeof $2Schema>"
+    ]
+  },
+  "Generate a zod type": {
+    "prefix": "zozo",
+    "description": "Generate a zod type schema",
+    "body": [
+      "export const ${1:name}Schema = z.$0",
+      "",
+      "export type ${1/(.*)/${1:/capitalize}/}Input = z.input<typeof $1Schema>",
+      "",
+      "export type ${1/(.*)/${1:/capitalize}/} = z.infer<typeof $1Schema>"
+    ]
+  },
+  "Generate a documented zod type": {
+    "prefix": "zozod",
+    "description": "Generate a documented zod type schema",
+    "body": [
+      "/**",
+      " * $1 schema",
+      " */",
+      "export const ${2:name}Schema = z.$0",
+      "",
+      "/**",
+      " * $1 input",
+      " */",
+      "export type ${2/(.*)/${2:/capitalize}/}Input = z.input<typeof $1Schema>",
+      "",
+      "/**",
+      " * $1",
+      " */",
+      "export type ${2/(.*)/${2:/capitalize}/} = z.infer<typeof $1Schema>"
     ]
   },
   "Jest describe test": {
     "prefix": "desc",
     "description": "Describe a jest test",
-    "body": ["describe('$1', () => {", "\t$0", "}) "]
+    "body": [
+      "describe('${1:${TM_FILENAME_BASE/(.*)\\.test/$1/gi}}', () => {",
+      "\t$0",
+      "}) "
+    ]
   },
   "Jest creates a case": {
     "prefix": "jit",
     "description": "Creates a test case",
-    "body": ["it('$1', ${2:async }() => {", "\t$0", "}) "]
+    "body": [
+      "it('$1', () => {",
+      "\t$0",
+      "}) "
+    ]
+  },
+  "Jest async test case": {
+    "prefix": "ajit",
+    "description": "Creates an async test case",
+    "body": [
+      "it('$1', () => {",
+      "\t$0",
+      "}) "
+    ]
   },
   "Creates an « O » component": {
     "prefix": "orec",
@@ -385,9 +597,80 @@
       "",
       "export function $1({",
       "\t${3/(.*)\\:(.*)/$1,/g}",
-      "}: $1Props): ${2:ReactElement} {",
+      "}: $1Props): ${2:ReactNode} {",
       "\t$0",
       "}"
     ]
-  }
+  },
+  "Creates an « 0 » props interface": {
+    "prefix": "oprop",
+    "description": "Creates an « O » props interfacce",
+    "body": [
+      "export interface ${1:$TM_FILENAME_BASE}Props {",
+      "\t$2",
+      "}"
+    ]
+  },
+  "Initialize a bun test file": {
+    "prefix": "buntest",
+    "description": "initialize a bun test file",
+    "body": [
+      "import { describe, expect, it } from 'bun:test'",
+      "",
+      "describe('${TM_FILENAME_BASE/(.*)\\..*/$1/}', () => {",
+      "\tit('$1', () => {",
+      "\t\t$0",
+      "\t})",
+      "})"
+    ]
+  },
+  "Creates a react function component using types": {
+    "prefix": "refc",
+    "description": "Creates a react function component using types",
+    "body": [
+      "export type ${1:$TM_FILENAME_BASE}Props = {",
+      "\t$2",
+      "}",
+      "",
+      "export function $1({}: $1Props) {",
+      "$0",
+      "}"
+    ]
+  },
+  "Creates a styled react function component using types": {
+    "prefix": "srefc",
+    "description": "Creates a react function component using types",
+    "body": [
+      "export type ${1:$TM_FILENAME_BASE}Props = {",
+      "\t$2",
+      "}",
+      "",
+      "export function $1({}: $1Props) {",
+      "$0",
+      "}",
+      "",
+      "export const $1StyleSheet = createStyleSheet(theme => ({",
+      "\t",
+      "}))"
+    ]
+  },
+  "Creates a reactive react function component using types": {
+    "prefix": "rrefc",
+    "description": "Creates a reactive react function component using types",
+    "body": [
+      "import { reactive } from '@legendapp/state/react'",
+      "",
+      "export type ${1:Name}Props = {",
+      "\t$2",
+      "}",
+      "",
+      "export const $1 = reactive<$1Props>(({}) => {",
+      "\treturn ${0:null}",
+      "})",
+      "",
+      "export const $1StyleSheet = createStyleSheet(theme => ({",
+      "\t",
+      "}))"
+    ]
+  },
 }

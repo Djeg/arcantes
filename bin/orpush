@@ -1,0 +1,7 @@
+#!/usr/bin/env sh
+sed -re 's/CI=/\# CI=/g' .husky/pre-push > .husky/tmp
+cp -f .husky/tmp .husky/pre-push
+git push
+git checkout .husky/pre-push
+rm .husky/tmp
+

@@ -1,21 +1,55 @@
 # VSCode Extensions
 VSCODE_EXTENSIONS=(
-  "EditorConfig.EditorConfig"
-  "esbenp.prettier-vscode"
-  "styled-components.vscode-styled-components"
-  "vscodevim.vim"
-  "zhuangtongfa.material-theme"
-  "bmewburn.vscode-intelephense-client"
-  "MehediDracula.php-namespace-resolver"
-  "blanc-frederic.vs-phpcompanion"
-  "mikestead.dotenv"
-  "humao.rest-client"
-  "whatwedo.twig"
-  "ms-python.python"
-  "ms-azuretools.vscode-docker"
-  "hideoo.create"
+  "1yib.rust-bundle"
   "adpyke.codesnap"
-  "MS-vsliveshare.vsliveshare"
+  "azemoh.one-monokai"
+  "biomejs.biome"
+  "blanc-frederic.vs-phpcompanion"
+  "blodwynn.featurehighlight"
+  "bmewburn.vscode-intelephense-client"
+  "cucumberopen.cucumber-official"
+  "dbaeumer.vscode-eslint"
+  "dustypomerleau.rust-syntax"
+  "editorconfig.editorconfig"
+  "esbenp.prettier-vscode"
+  "fabiospampinato.vscode-monokai-night"
+  "fayras.simple-new-file"
+  "gerane.theme-flatlandmonokai"
+  "github.copilot"
+  "github.copilot-chat"
+  "graphql.vscode-graphql"
+  "graphql.vscode-graphql-syntax"
+  "hideoo.create"
+  "humao.rest-client"
+  "illixion.vscode-vibrancy-continued"
+  "jock.svg"
+  "jprestidge.theme-material-theme"
+  "meganrogge.template-string-converter"
+  "mehedidracula.php-namespace-resolver"
+  "mikestead.dotenv"
+  "monokai.theme-monokai-pro-vscode"
+  "ms-azuretools.vscode-docker"
+  "ms-python.debugpy"
+  "ms-python.python"
+  "ms-python.vscode-pylance"
+  "ms-vsliveshare.vsliveshare"
+  "orta.vscode-jest"
+  "pkief.material-icon-theme"
+  "prisma.prisma"
+  "robertz.code-snapshot"
+  "rust-lang.rust-analyzer"
+  "serayuzgur.crates"
+  "siarheikuchuk.gherkin-beautifier-vs-code-plugin"
+  "solomonkinard.git-blame"
+  "styled-components.vscode-styled-components"
+  "subhendukundu.gif-code-snippet"
+  "syler.sass-indented"
+  "tal7aouy.theme"
+  "tamasfe.even-better-toml"
+  "techtheawesome.rust-yew"
+  "vscodevim.vim"
+  "whatwedo.twig"
+  "zhuangtongfa.material-theme"
 )
 
 # Configure git
@@ -320,14 +354,14 @@ configuration()
   echo ""
   echo ""
 
-  # gitConfig
+  gitConfig
   zshConfig
-  # nvimConfig
-  # tmuxConfig
-  # fontConfig
-  # dockerConfig
-  # devFileConfig
-  # binConfig
-  # codeConfig
-  # kittyConfig
+  nvimConfig
+  tmuxConfig
+  fontConfig
+  dockerConfig
+  devFileConfig
+  binConfig
+  codeConfig
+  kittyConfig
 }

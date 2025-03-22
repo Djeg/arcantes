@@ -19,6 +19,37 @@ alias gpr="hub pull-request -b "
 alias gbr="git branch"
 alias gtag="git tag -a"
 alias gpom="git pull origin master"
+alias gpmas="git checkout master && git pull origin master"
+alias gpmain="git checkout main && git pull origin main"
+alias gnbr="git checkout main && git pull origin main && g co -b"
+alias gmainfco="git checkout main && git pull origin main && g fetch origin && g co"
+
+function gfeat() {
+  echo "git co -b feat/$1";
+  git co -b feat/$1;
+}
+
+function gfix() {
+  echo "git co -b fix/$1";
+  git co -b fix/$1;
+}
+
+function grfo() {
+  echo "git co -b refactor/$1";
+  git co -b refactor/$1;
+}
+
+function gcho() {
+  echo "git co -b chore/$1";
+  git co -b chore/$1;
+}
+
+function gfetch() {
+  git co $1
+  git pull origin $1
+  git fetch origin $2
+  git co $2
+}
 
 # ls
 alias ls="ls --color"
@@ -57,3 +88,6 @@ alias dcl="docker-compose logs --tail=10 -f"
 # Vim alias
 alias vim=nvim
 alias vi=nvim
+
+# MacOS simulator aliases
+alias simlist="xcrun simctl list devices"

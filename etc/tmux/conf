@@ -11,7 +11,7 @@ bind h select-pane -L
 bind j select-pane -D
 bind k select-pane -U
 bind l select-pane -R
-bind $ list-sessions
+bind $ choose-session
 bind - command-prompt -p find-session 'switch-client -t %%'
 bind ù command-prompt -p rename-session 'rename-session %%'
 
@@ -68,3 +68,6 @@ set-option -g status-justify left         # alignment of windows
 # tmuxinator fix
 set -g base-index 1
 set -g pane-base-index 1
+
+# easy visual mode
+bind a run "tmux save-buffer - | pbcopy"  # Copy to macOS

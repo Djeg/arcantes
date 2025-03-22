@@ -110,7 +110,6 @@ installMacPackages()
 
   BREW_PACKAGES=(
     # General applications
-    "google-chrome"
     "neovim"
     "kitty"
     "fzf"
@@ -120,6 +119,7 @@ installMacPackages()
     "inkscape"
     "visual-studio-code"
     "watchman"
+    "cursor"
 
     # NodeJS
     "node"

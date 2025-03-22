@@ -16,27 +16,26 @@ function prompt() {
   colorGrey="239"
 
   # here is some background and foreground combination
+  fgLightGreen="\033[38;5;${colorLightGreen}m"
   bgLightGreenAndFgBlack="\033[38;5;${colorBlack};48;5;${colorLightGreen}m"
-  bgBlackAndFgLightGreen="\033[38;5;${colorLightGreen};48;5;0m"
+  bgBlackAndFgLightGreen="\033[38;5;${colorLightGreen};48;5;${colorBlack}m"
   bgGreyAndFgLightGreen="\033[38;5;${colorLightGreen};48;5;${colorGrey}m"
   bgGreyAndFgWhite="\033[38;5;${colorWhite};48;5;${colorGrey}m"
-  bgBlackAndFgGrey="\033[38;5;${colorGrey};48;5;0m"
+  bgBlackAndFgGrey="\033[38;5;${colorGrey};48;5;${colorBlack}m"
   bgRedAndFgWhite="\033[38;5;${colorWhite};48;5;${colorError}m"
   bgLightGreenAndFgRed="\033[38;5;${colorError};48;5;${colorLightGreen}m"
 
-  # here are some usefull variables
-  gitBranch=$(git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/')
-
   # determining the branch to display
-  if [[ -z $gitBranch ]]; then
+  if [[ -z $(gitBranch) ]]; then
     branch=""
   else
-    branch="${bold}${bgBlackAndFgLightGreen}  $(gitBranch)${stop}"
+    branch="${stop}%B%F{$colorLightGreen}  $(gitBranch)${stop}"
   fi
 
-  error="%(?,,${bold}${bgRedAndFgWhite} 󰇸 ${bgLightGreenAndFgRed}${stop})"
+  error="%(?,,%B%F{$colorWhite}%K{$colorError} 󰇸 %f%b%k%F{$colorError}%K{$colorLightGreen}%f%k)"
 
-  echo "${error}${bold}${bgLightGreenAndFgBlack} λ ${stop}${bgGreyAndFgLightGreen}${bgGreyAndFgWhite} %c ${bgBlackAndFgGrey}${stop}${branch}${stop}${newLine}╰─ "
+  echo "${error}%B%F{$colorBlack}%K{$colorLightGreen} λ %b%f%k%F{$colorLightGreen}%K{$colorGrey}%f%k%F{$colorWhite}%K{$colorGrey} %c %f%k%F{$colorGrey}%f${branch}${stop}${newLine}╰─ "
 }
 
 PROMPT="$(prompt)"
+RPROMPT=""

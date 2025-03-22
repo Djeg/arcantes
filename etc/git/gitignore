@@ -11,3 +11,4 @@ _vimrc_local.vim
 .DS_Store
 *.poc.*
 *.POC.*
+.vscode/settings.json

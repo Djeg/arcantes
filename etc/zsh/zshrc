@@ -82,3 +82,14 @@ source $ZSH_CONFIG/exports.sh
 source $ZSH_CONFIG/aliases.sh
 source $ZSH_CONFIG/prompt.sh
 source $HOME/.localrc
+
+# bun completions
+[ -s "/Users/djeg/.bun/_bun" ] && source "/Users/djeg/.bun/_bun"
+
+# pnpm
+export PNPM_HOME="/Users/djeg/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end

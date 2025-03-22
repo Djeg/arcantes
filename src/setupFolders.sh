@@ -8,7 +8,7 @@ setupFolders()
   echo ""
 
   # Change permissions if on mac os
-  if [[ "$OSTYPE" == "darwin"* ]]
+  if [[ "$OSTYPE" != "linux"* ]]
   then
     echo "> Setup permissions"
     echo ""
