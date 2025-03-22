@@ -8,13 +8,13 @@ setupFolders()
   echo ""
 
   # Change permissions if on mac os
-  if [[ "$OSTYPE" != "linux"* ]]
-  then
-    echo "> Setup permissions"
-    echo ""
-    sudo chmod -R 777 $HOME/Applications
-    sudo chmod -R 777 $HOME/Library
-  fi
+  # if [[ "$OSTYPE" != "linux"* ]]
+  # then
+  #   echo "> Setup permissions"
+  #   echo ""
+  #   sudo chmod -R 777 $HOME/Applications
+  #   sudo chmod -R 777 $HOME/Library
+  # fi
 
   echo "> Setup .config"
   if [[ ! -d $CONFIG_DIR ]]
