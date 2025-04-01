@@ -2,7 +2,7 @@
   "window.menuBarVisibility": "toggle",
   "workbench.statusBar.visible": false,
   "workbench.startupEditor": "none",
-  "editor.fontFamily": "'FiraCode Nerd Font', 'Menlo', 'Droid Sans Mono', 'monospace', monospace",
+  "editor.fontFamily": "'Fira Code', 'Menlo', 'Droid Sans Mono', 'monospace', monospace",
   "editor.fontSize": 14,
   "editor.rulers": [80],
   "editor.fontWeight": 525,

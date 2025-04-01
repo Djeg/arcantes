@@ -17,24 +17,20 @@ function prompt() {
 
   # here is some background and foreground combination
   fgLightGreen="\033[38;5;${colorLightGreen}m"
-  bgLightGreenAndFgBlack="\033[38;5;${colorBlack};48;5;${colorLightGreen}m"
-  bgBlackAndFgLightGreen="\033[38;5;${colorLightGreen};48;5;${colorBlack}m"
-  bgGreyAndFgLightGreen="\033[38;5;${colorLightGreen};48;5;${colorGrey}m"
-  bgGreyAndFgWhite="\033[38;5;${colorWhite};48;5;${colorGrey}m"
-  bgBlackAndFgGrey="\033[38;5;${colorGrey};48;5;${colorBlack}m"
-  bgRedAndFgWhite="\033[38;5;${colorWhite};48;5;${colorError}m"
-  bgLightGreenAndFgRed="\033[38;5;${colorError};48;5;${colorLightGreen}m"
+  fgRedError="\033[38;5;${colorError}m"
+  fgWhite="\033[38;5;${colorWhite}m"
+  fgGrey="\033[38;5;${colorGrey}m"
 
   # determining the branch to display
   if [[ -z $(gitBranch) ]]; then
     branch=""
   else
-    branch="${stop}%B%F{$colorLightGreen}  $(gitBranch)${stop}"
+    branch="${stop}%B%F{$fgGrey}  $(gitBranch)${stop}"
   fi
 
-  error="%(?,,%B%F{$colorWhite}%K{$colorError} 󰇸 %f%b%k%F{$colorError}%K{$colorLightGreen}%f%k)"
+  error="%(?,,%B%F{$colorError}⌧ %f%b)"
 
-  echo "${error}%B%F{$colorBlack}%K{$colorLightGreen} λ %b%f%k%F{$colorLightGreen}%K{$colorGrey}%f%k%F{$colorWhite}%K{$colorGrey} %c %f%k%F{$colorGrey}%f${branch}${stop}${newLine}╰─ "
+  echo "${error}${stop}%B%F{$colorLightGreen}λ ❱%b%f%k%F{$colorLightGreen}%K{$colorGrey}%f%k%F{$colorWhite}%B %c%f%k%F{$colorGrey}%f${branch}${stop}${newLine}╰─ "
 }
 
 PROMPT="$(prompt)"
