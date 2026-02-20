@@ -25,4 +25,4 @@ export ANDROID_HOME="$HOME/Android/Sdk"
 export ANDROID_SDK_ROOT="$HOME/Android/Sdk"
 
 # Update path
-export PATH=$PATH:$ANDROID_HOME:$ANDROID_HOME/tools/bin:$ANDROID_HOME/platform-tools:$ANDROID_HOME/emulator:$ANDROID_HOME/tools:/opt/homebrew/bin:/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin
+export PATH=$PATH:.bin:$ANDROID_HOME:$ANDROID_HOME/tools/bin:$ANDROID_HOME/platform-tools:$ANDROID_HOME/emulator:$ANDROID_HOME/tools:/opt/homebrew/bin:/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin

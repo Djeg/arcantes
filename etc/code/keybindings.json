@@ -16,7 +16,7 @@
     "command": "-workbench.action.togglePanel"
   },
   {
-    "key": "ctrl+shift+-",
+    "key": "ctrl+shift+n",
     "command": "create.new"
   },
   {
@@ -70,11 +70,6 @@
   {
     "key": "ctrl+shift+t",
     "command": "workbench.action.terminal.toggleTerminal",
-    "when": "terminal.active"
-  },
-  {
-    "key": "ctrl+`",
-    "command": "-workbench.action.terminal.toggleTerminal",
     "when": "terminal.active"
   },
   {
@@ -210,11 +205,15 @@
     "when": "editorFocus"
   },
   {
-    "key": "ctrl+shift+n",
+    "key": "shift+cmd+[KeyM]",
     "command": "create.newFromCurrent"
   },
   {
     "key": "shift+alt+cmd+o",
     "command": "-create.newFromCurrent"
+  },
+  {
+    "key": "cmd+i",
+    "command": "composerMode.agent"
   }
 ]

@@ -4,6 +4,9 @@ alias tailf='tail -f'
 # Easy tmux
 alias tmux='tmux -2'
 
+# Bat
+alias cat="bat"
+
 # git alias
 alias g="git"
 alias gst="git status"
