@@ -73,3 +73,7 @@ set -g pane-base-index 1
 
 # easy visual mode
 bind a run "tmux save-buffer - | pbcopy"  # Copy to macOS
+
+# clipboard
+set-option -g set-clipboard external
+set-option -g allow-passthrough on

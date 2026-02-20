@@ -132,7 +132,7 @@ zshConfig()
 # Configure neovim
 nvimConfig()
 {
-  NEOVIM_CONFIG=$DIR/etc/nvim
+  NEOVIM_CONFIG=$DIR/etc/arcante-nvim
   NEOVIM_DEST=$HOME/.config/nvim
 
   if [[ -f $NEOVIM_DEST ]]
