@@ -1,13 +1,13 @@
-require "nvchad.options"
+require("nvchad.options")
 
 local function calculateColumns()
-  local column = "80"
+	local column = "80"
 
-  for i = 81, 400 do
-    column = column .. "," .. string.format("%d", i)
-  end
+	for i = 81, 400 do
+		column = column .. "," .. string.format("%d", i)
+	end
 
-  return column
+	return column
 end
 
 -- Options by convention for consistency

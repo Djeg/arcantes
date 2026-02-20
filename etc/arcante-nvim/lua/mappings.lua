@@ -45,3 +45,6 @@ keymap.set("n", "<C-B>", ":Telescope buffers<CR>")
 
 -- NVIM Tree
 keymap.set("n", "<leader>nf", ":NvimTreeToggle<CR>")
+
+-- Oil
+keymap.set("n", "<C-a>", ":Oil --float<CR>")
