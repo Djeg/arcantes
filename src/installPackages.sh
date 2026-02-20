@@ -133,6 +133,7 @@ installMacPackages()
 
     # Lua
     "lua"
+    "lua-language-server"
 
     # Docker
     "docker"

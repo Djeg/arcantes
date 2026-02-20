@@ -1,13 +1,16 @@
-require "nvchad.mappings"
+require("nvchad.mappings")
 
 -- Keymap by convention for consistency
 local keymap = vim.keymap
 
+-- unset nvchad keymaps
+keymap.del("n", "<C-c>")
+
 -- navigation
-keymap.set("n", "<C-l>", "w")
-keymap.set("n", "<C-h>", "b")
-keymap.set("n", "<C-j>", "4j")
-keymap.set("n", "<C-k>", "4k")
+keymap.set("n", "<C-l>", "w", { desc = "Move to the next word" })
+keymap.set("n", "<C-h>", "b", { desc = "Move to the previous word" })
+keymap.set("n", "<C-j>", "4j", { desc = "Move up 4 characters" })
+keymap.set("n", "<C-k>", "4k", { desc = "Move down 5 characters" })
 keymap.set("v", "<C-l>", "w")
 keymap.set("v", "<C-h>", "b")
 keymap.set("v", "<C-j>", "4j")
