@@ -48,3 +48,6 @@ keymap.set("n", "<leader>nf", ":NvimTreeToggle<CR>")
 
 -- Oil
 keymap.set("n", "<C-a>", ":Oil --float<CR>")
+
+-- LSP utils
+keymap.set("n", "<leader>df", vim.diagnostic.open_float, { desc = "Show diagnostic" })
