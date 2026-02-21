@@ -30,8 +30,8 @@ opt.autoindent = true
 opt.smartindent = false
 
 -- hide status line
-opt.ls = 1
-opt.ruler = true
+-- opt.ls =
+-- opt.ruler = true
 
 -- list hidden chars
 opt.list = true
@@ -55,7 +55,7 @@ opt.cursorline = true
 opt.termguicolors = true
 opt.background = "dark"
 opt.signcolumn = "yes"
-opt.colorcolumn = calculateColumns()
+opt.colorcolumn = "80,120"
 opt.guicursor = "n-v-c-sm:block,i-ci-ve:ver25,r-cr-o:hor20"
 
 -- improve backspace behaviour
@@ -67,3 +67,6 @@ opt.timeoutlen = 150
 
 -- clipboard
 opt.clipboard = "unnamedplus"
+
+-- transparent
+vim.g.transparent_enabled = true

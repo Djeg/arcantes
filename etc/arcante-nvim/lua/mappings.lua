@@ -41,7 +41,7 @@ keymap.set("n", "<leader>so", ":source ~/.config/nvim/init.lua<CR>")
 
 -- Telescope
 keymap.set("n", "<C-P>", ":Telescope find_files<CR>")
-keymap.set("n", "<C-B>", ":Telescope buffers<CR>")
+keymap.set("n", "<C-b>", ":Telescope buffers<CR>")
 
 -- NVIM Tree
 keymap.set("n", "<leader>nf", ":NvimTreeToggle<CR>")

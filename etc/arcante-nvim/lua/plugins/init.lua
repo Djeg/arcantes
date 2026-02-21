@@ -1,13 +1,14 @@
 return {
 	{
 		"stevearc/conform.nvim",
-		opts = require("configs.conform"),
+		opts = function()
+			return require("configs.conform")
+		end,
 	},
-
 	{
 		"neovim/nvim-lspconfig",
 		config = function()
-			require("configs.lspconfig")
+			return require("configs.lspconfig")
 		end,
 	},
 	{
@@ -22,6 +23,25 @@ return {
 		lazy = false,
 		opts = function()
 			return require("configs.oil")
+		end,
+	},
+	{
+		"xiyaowong/transparent.nvim",
+		lazy = false,
+		opts = {
+			extra_groups = {
+				"NormalFloat",
+				"NvimTreeNormal",
+			},
+		},
+	},
+	{
+		"lionyxml/gitlineage.nvim",
+		dependencies = {
+			"sindrets/diffview.nvim", -- optional, for open_diff feature
+		},
+		config = function()
+			require("gitlineage").setup()
 		end,
 	},
 }
