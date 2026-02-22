@@ -44,4 +44,13 @@ return {
 			require("gitlineage").setup()
 		end,
 	},
+	{
+		"coder/claudecode.nvim",
+		dependencies = { "folke/snacks.nvim" },
+		config = true,
+		keys = {
+			-- Your keymaps here
+			{ "<leader>ct", "<cmd>ClaudeCode<cr>", desc = "Toggle Claude" },
+		},
+	},
 }
