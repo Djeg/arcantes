@@ -145,6 +145,9 @@ installMacPackages()
 
     # Rust
     "rust"
+
+    # claude
+    "claude-code"
   )
 
   echo "> installing homebrew"

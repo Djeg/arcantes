@@ -1,15 +1,5 @@
 require("nvchad.options")
 
-local function calculateColumns()
-	local column = "80"
-
-	for i = 81, 400 do
-		column = column .. "," .. string.format("%d", i)
-	end
-
-	return column
-end
-
 -- Options by convention for consistency
 local opt = vim.opt
 
@@ -70,3 +60,6 @@ opt.clipboard = "unnamedplus"
 
 -- transparent
 vim.g.transparent_enabled = true
+
+-- Lua Snippet path
+vim.g.lua_snippets_path = vim.fn.stdpath("config") .. "/lua/snippets"
