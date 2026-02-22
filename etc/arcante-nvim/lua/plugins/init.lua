@@ -49,8 +49,11 @@ return {
 		dependencies = { "folke/snacks.nvim" },
 		config = true,
 		keys = {
-			-- Your keymaps here
 			{ "<leader>ct", "<cmd>ClaudeCode<cr>", desc = "Toggle Claude" },
+			{ "<leader>cf", "<cmd>ClaudeCodeAdd %<cr>", desc = "Toggle Claude on the current file" },
+			{ "<leader>co", "<cmd>ClaudeCodeDiffAccept<cr>", desc = "Accept diff" },
+			{ "<leader>ck", "<cmd>ClaudeCodeDiffDeny<cr>", desc = "Deny diff" },
+			{ "<leader>cs", "<cmd>ClaudeCodeSend<cr>", mode = "v", desc = "Send to Claude" },
 		},
 	},
 }
