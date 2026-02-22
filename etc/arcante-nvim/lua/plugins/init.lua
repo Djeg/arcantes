@@ -59,4 +59,21 @@ return {
 			{ "<leader>cs", "<cmd>ClaudeCodeSend<cr>", mode = "v", desc = "Send to Claude" },
 		},
 	},
+	{
+		"zbirenbaum/copilot.lua",
+		dependencies = { "copilotlsp-nvim/copilot-lsp" },
+		config = true,
+		cmd = "Copilot",
+		opts = {
+			suggestion = {
+				auto_trigger = true,
+				keymap = {
+					accept = "<C-o>",
+				},
+			},
+			ns = {
+				enabled = true,
+			},
+		},
+	},
 }

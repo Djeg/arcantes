@@ -1,5 +1,7 @@
 require("nvchad.mappings")
 
+local ls = require("luasnip")
+
 -- Keymap by convention for consistency
 local keymap = vim.keymap
 
@@ -51,3 +53,8 @@ keymap.set("n", "<C-a>", ":Oil --float<CR>")
 
 -- LSP utils
 keymap.set("n", "<leader>df", vim.diagnostic.open_float, { desc = "Show diagnostic" })
+
+-- LuaSnip
+keymap.set({ "i", "n" }, "<leader><tab>", function()
+	ls.expand()
+end, { desc = "expand snippet", silent = true })
