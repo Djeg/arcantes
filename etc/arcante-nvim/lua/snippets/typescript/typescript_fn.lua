@@ -4,12 +4,6 @@ local s = ls.snippet
 local t = ls.text_node
 local i = ls.insert_node
 
-local doc_block_snip = s({ trig = "db", desc = "TSDoc snippet" }, {
-	t({ "/**", " * " }),
-	i(1),
-	t({ "", " */" }),
-})
-
 local fn_snippet = s({ trig = "fn", desc = "function snippet" }, {
 	t("function "),
 	i(1, "name"),
@@ -305,7 +299,6 @@ local eacfn2_snippet = s({ trig = "eacfn2", desc = "exported async const functio
 })
 
 return {
-	doc_block_snip,
 	fn_snippet,
 	fn1_snippet,
 	fn2_snippet,
