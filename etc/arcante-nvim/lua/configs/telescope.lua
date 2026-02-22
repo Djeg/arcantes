@@ -1,16 +1,14 @@
 local options = {
 	defaults = {
-		theme = "get_dropdown",
-		layout_strategy = "horizontal",
+		theme = "get_ivy",
+		layout_strategy = "bottom_pane",
 		layout_config = {
-			horizontal = {
-				anchor = "S",
+			bottom_pane = {
+				anchor = "N",
 				anchor_padding = 0,
-				prompt_position = "bottom",
-				width = 0.99,
+				prompt_position = "top",
 			},
-			width = 0.99,
-			height = 0.60,
+			height = 0.7,
 		},
 	},
 }

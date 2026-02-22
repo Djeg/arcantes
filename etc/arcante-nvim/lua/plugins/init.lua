@@ -48,6 +48,9 @@ return {
 		"coder/claudecode.nvim",
 		dependencies = { "folke/snacks.nvim" },
 		config = true,
+		opts = function()
+			return require("configs.claudecode")
+		end,
 		keys = {
 			{ "<leader>ct", "<cmd>ClaudeCode<cr>", desc = "Toggle Claude" },
 			{ "<leader>cf", "<cmd>ClaudeCodeAdd %<cr>", desc = "Toggle Claude on the current file" },
