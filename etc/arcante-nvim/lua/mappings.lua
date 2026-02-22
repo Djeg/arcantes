@@ -55,6 +55,6 @@ keymap.set("n", "<C-a>", ":Oil --float<CR>")
 keymap.set("n", "<leader>df", vim.diagnostic.open_float, { desc = "Show diagnostic" })
 
 -- LuaSnip
-keymap.set({ "i", "n" }, "<leader><tab>", function()
-	ls.expand()
-end, { desc = "expand snippet", silent = true })
+keymap.set("i", "<leader><tab>", function()
+	ls.jump(1)
+end, { desc = "next snippet", silent = true })
