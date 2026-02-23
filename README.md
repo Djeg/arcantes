@@ -1,6 +1,10 @@
 # Arcantes
 
-This project contains all settings and configurations of my arch linux :).
+<p align="center">
+  <img src="./assets/arcantes.jpeg" alt="arcantes" />
+</p>
+
+An epic dotfile configuration for arc and mac os
 
 ## Installation
 
