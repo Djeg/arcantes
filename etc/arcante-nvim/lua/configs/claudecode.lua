@@ -2,8 +2,7 @@ local opts = {}
 
 opts.terminal = {
 	snacks_win_opts = {
-		position = "float",
-		width = 0.9,
+		width = 0.5,
 		height = 0.9,
 		border = "rounded",
 		backdrop = 80,
