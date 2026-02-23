@@ -4,8 +4,13 @@ local s = ls.snippet
 local t = ls.text_node
 local i = ls.insert_node
 
+local doc_block_snippet = s({ trig = "db", desc = "Documentation block snippet" }, {
+	t("/**"),
+	t({ "", " * " }),
+	i(0),
+	t({ "", " */" }),
+})
+
 return {
-	s("test", {
-		t({ "Simple test -> " }, i(1, "Variable")),
-	}),
+	doc_block_snippet,
 }

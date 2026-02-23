@@ -26,6 +26,7 @@ local options = {
 		typescript = get_js_formatters,
 		typescriptreact = get_js_formatters,
 		javascript = get_js_formatters,
+		php = { "php_cs_fixer", "pretty-php" },
 	},
 }
 

@@ -56,4 +56,14 @@ function file_utils.get_pascal_cased_filename(path)
 	return table.concat(parts, "")
 end
 
+function file_utils.get_php_namespace_from_path(path)
+	local after_src = path:match("src/(.+)/[^/]+%.php$")
+
+	if not after_src then
+		return "App"
+	end
+
+	return "App\\" .. after_src:gsub("/", "\\")
+end
+
 return file_utils
