@@ -32,11 +32,19 @@ keymap.set("v", "<D-k>", "4k")
 keymap.set("n", "<leader>a", "gg<S-v><S-g><CR>")
 
 -- buffer navigation
-keymap.set("n", "<leader>q", ":bdelete<CR>")
+keymap.set("n", "<leader>q", "::b#<bar>bd#<CR>")
 keymap.set("n", "<leader>n", ":bNext<CR>")
 
 -- clear search
 keymap.set("n", "<leader>cs", ":nohlsearch<CR>")
+
+-- Copy current file path to clipboard
+keymap.set(
+	"n",
+	"<leader>cp",
+	":lua require('utils.files').copy_file_path_to_clipboard()<CR>",
+	{ desc = "Copy file path to clipboard" }
+)
 
 -- source
 keymap.set("n", "<leader>so", ":source ~/.config/nvim/init.lua<CR>")
@@ -52,9 +60,16 @@ keymap.set("n", "<leader>nf", ":NvimTreeToggle<CR>")
 keymap.set("n", "<C-a>", ":Oil --float<CR>")
 
 -- LSP utils
-keymap.set("n", "<leader>df", vim.diagnostic.open_float, { desc = "Show diagnostic" })
+keymap.set("n", "<leader>de", vim.diagnostic.open_float, { desc = "Show diagnostic" })
+keymap.set("n", "<leader>df", "<cmd>lua vim.lsp.buf.hover()<cr>", { desc = "Show function signature" })
 
 -- LuaSnip
 keymap.set("i", "<leader><tab>", function()
 	ls.jump(1)
 end, { desc = "next snippet", silent = true })
+
+-- Prompting UTILS
+keymap.set("n", "<leader>op", ":e PROMPT.md<CR>")
+
+-- TYpescript fix all
+keymap.set("n", "<leader>tsf", ":lua require('typescript').actions.fixAll()<cr>")

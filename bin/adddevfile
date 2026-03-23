@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+#!/usr/bin/env nodje
 const fs = require('node:fs/promises')
 const readline = require('node:readline')
 const { stdin: input, stdout: output } = require('node:process')

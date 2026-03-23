@@ -1,0 +1,4 @@
+#!/usr/bin/env zsh
+
+# Clean all xcode cache data
+xcrun simctl erase all

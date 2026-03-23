@@ -1,7 +1,7 @@
 require("nvchad.configs.lspconfig").defaults()
 
 -- List of servers to enable
-local servers = { "html", "cssls", "lua_ls", "ts_ls", "eslint", "phpactor" }
+local servers = { "html", "cssls", "biome", "lua_ls", "ts_ls", "eslint", "phpactor" }
 
 -- Enable the servers
 vim.lsp.enable(servers)

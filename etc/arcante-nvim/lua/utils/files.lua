@@ -66,4 +66,12 @@ function file_utils.get_php_namespace_from_path(path)
 	return "App\\" .. after_src:gsub("/", "\\")
 end
 
+function file_utils.copy_file_path_to_clipboard()
+	local path = vim.fn.expand("%")
+
+	vim.fn.setreg("+", path)
+
+	vim.api.nvim_echo({ { "Copied: " .. path } }, false, {})
+end
+
 return file_utils

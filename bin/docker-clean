@@ -1,0 +1,10 @@
+#!/usr/bin/env zsh
+
+# Stop all containers
+docker stop $(docker ps -a -q)
+
+# Remove all containers
+docker container rm -f $(docker container ls -aq)
+
+# Remove all volumes
+docker volume rm -f $(docker volume ls -q)
