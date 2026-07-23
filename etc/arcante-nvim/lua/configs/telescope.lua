@@ -10,6 +10,7 @@ local options = {
 			},
 			height = 0.7,
 		},
+		file_ignore_patterns = { "node_modules", "vendor", "var/cache" },
 	},
 }
 

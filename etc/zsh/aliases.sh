@@ -54,6 +54,13 @@ function gfetch() {
   git co $2
 }
 
+# svn alias
+alias sco=svn checkout
+alias slog=svn log
+alias sst=svn status
+alias svdiff=svn diff
+alias svco=svn commit
+
 # ls
 alias ls="ls --color"
 alias ll="ls -la --color"
@@ -88,9 +95,39 @@ alias dim="docker images"
 alias dcup="docker-compose up"
 alias dcl="docker-compose logs --tail=10 -f"
 
+# Podman alias
+alias pod=podman
+alias prun="podman run -it --rm"
+alias prm="podman rm"
+alias prmi="podman rmi"
+alias pc="podman-compose"
+alias pce="podman-compose exec"
+alias pcps="podman-compose ps"
+alias pcb="podman-compose build"
+alias pex="podman exec -it"
+alias pcr="podman-compose restart"
+alias prun="podman-compose run"
+alias pps="podman ps"
+alias pim="podman images"
+
+
 # Vim alias
 alias vim=nvim
 alias vi=nvim
 
 # MacOS simulator aliases
 alias simlist="xcrun simctl list devices"
+
+# Clean up and install updates on ubuntu apt system
+function ubundate() {
+  echo "> Updating APT packages"
+  echo ""
+  sudo apt update
+  sudo apt upgrade -y
+  sudo apt autoremove --purge
+  sudo apt autoclean
+
+  echo "> Updating snaps packages"
+  echo ""
+  sudo snap refresh
+}

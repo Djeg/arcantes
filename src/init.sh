@@ -15,7 +15,7 @@ then
 fi
 
 # Setup usefull variables
-DIR="$( cd "$( dirname "$0" )" && pwd )" # current working directory
+DIR="$( cd "$( dirname "$0" )/.." && pwd )" # current working directory
 CONFIG_DIR=$HOME/.config
 BIN_DIR=$HOME/.bin
 LOG_DIR=$HOME/.log
@@ -33,6 +33,6 @@ init()
 {
   welcome
   setupFolders
-  installPackages
+  # installPackages
   configuration
 }

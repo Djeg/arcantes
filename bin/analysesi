@@ -1,0 +1,2 @@
+#/usr/bin/env zsh
+java -jar $HOME/.bin/AnalyseSI-0.80.jar $*

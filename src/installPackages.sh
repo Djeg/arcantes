@@ -1,4 +1,4 @@
-# install Linux Packages
+# install Arch Linux Packages
 installLinuxPackages()
 {
   OUT_FILE=$LOG_DIR/installPackages.arcantes.log
@@ -179,13 +179,64 @@ installMacPackages()
   echo "> done"
 }
 
+
+# setup and install ubuntu based packages
+installUbuntuPackages()
+{
+  APT_PACKAGES=(
+    # General applications
+    "chromium-browser"
+    "chromium-chromedriver"
+    "gcolor3"
+    "neovim"
+    "kitty"
+    "fzf"
+    "zsh"
+    "tmux"
+    "gimp"
+    "pedgin"
+    "subversion"
+
+    # NodeJS
+    "nvm-cli"
+
+    # PHP
+    "php"
+    "composer"
+
+    # Python
+    "python3.12-venv"
+
+    # Docker
+    "docker.io"
+    "docker-compose"
+  )
+
+  echo ""
+  echo " __              __           __                          "
+  echo "(_  |_  _  _      _)    __   |__)  _   _ |   _   _   _  _ "
+  echo "__) |_ (- |_)    /__         |    (_| (_ |( (_| (_) (- _) "
+  echo ""
+
+  for i in ${APT_PACKAGES[@]}
+  do
+    echo ">> Installing: $i"
+    sudo apt install --yes --force-yes $i
+    echo ""
+    echo ""
+  done
+
+  echo "> done"
+}
+
 # Install the standard package
 installPackages()
 {
   if [[ "$OSTYPE" == "linux"* ]]
   then
-    installLinuxPackages
+    # installLinuxPackages
+    installUbuntuPackages
   else
-    installMacPackages
+    # installMacPackages
   fi
 }

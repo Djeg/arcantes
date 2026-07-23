@@ -7,13 +7,6 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 	end,
 })
 
-vim.api.nvim_create_autocmd("VimEnter", {
-	pattern = "*",
-	callback = function()
-		vim.cmd(":Copilot")
-	end,
-})
-
 -- Remove unused imports on save
 vim.api.nvim_create_autocmd({ "BufWritePre" }, {
 	group = vim.api.nvim_create_augroup("ts_imports", { clear = true }),

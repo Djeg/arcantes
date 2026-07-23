@@ -5,9 +5,6 @@ export PATH="bin:vendor/bin:node_modules/.bin:/home/djeg/.gem/ruby/2.5.0/bin:$HO
 
 export ZSH_CONFIG="$HOME/.config/zsh"
 
-# Mise trusted config path
-MISE_TRUSTED_CONFIG_PATHS="$HOME/Projects"
-
 # ZINIT
 ZINIT_HOME="$HOME/.config/zinit"
 
@@ -58,10 +55,11 @@ zstyle ':completion:*' menu no
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 
+# Fzf search
+source /usr/share/doc/fzf/examples/key-bindings.zsh
+
 # Shell integrations
-eval "$(fzf --zsh)"
 eval "$(zoxide init --cmd cd zsh)"
-eval "$(mise activate zsh)"
 
 # loading custom file
 source $ZSH_CONFIG/exports.sh
@@ -70,3 +68,14 @@ source $HOME/.localrc
 
 # bun completions
 [ -s "/Users/djeg/.bun/_bun" ] && source "/Users/djeg/.bun/_bun"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# php vm
+export PHPVM_DIR="/home/djegat/.phpvm"
+export PATH="$PHPVM_DIR/bin:$PATH"
+if [[ -s "$PHPVM_DIR/phpvm.sh" ]]; then
+  source "$PHPVM_DIR/phpvm.sh"
+fi

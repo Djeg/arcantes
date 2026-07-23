@@ -169,6 +169,10 @@ tmuxConfig()
 
   ln -s $TMUX_PATH $TMUX_DEST
 
+  mkdir -p $HOME/.tmux/plugins
+
+  git clone https://github.com/tmuxpack/tpack ~/.tmux/plugins/tpm
+
   echo "> done"
 }
 
@@ -329,12 +333,31 @@ kittyConfig()
   KITTY_CONF="$DIR/etc/kitty"
   DEST_DIR="$HOME/.config/kitty"
 
-  if [[ -d $DEST_DIR ]]
+  if [[ -d $DEST_DIR || -f $DEST_DIR ]]
   then
     rm -rf $DEST_DIR
   fi
 
   ln -s $KITTY_CONF $DEST_DIR
+
+  echo "> Done"
+}
+
+opencodeConfig()
+{
+  echo ""
+  echo ""
+  echo "> OpenCode configuration"
+
+  OPENCODE_CONF="$DIR/etc/opencode"
+  DEST_DIR="$HOME/.config/opencode"
+
+  if [[ -d $DEST_DIR || -f $DEST_DIR ]]
+  then
+    rm -rf $DEST_DIR
+  fi
+
+  ln -s $OPENCODE_CONF $DEST_DIR
 
   echo "> Done"
 }
@@ -359,9 +382,10 @@ configuration()
   nvimConfig
   tmuxConfig
   fontConfig
-  dockerConfig
+  # dockerConfig
   devFileConfig
   binConfig
-  codeConfig
+  # codeConfig
   kittyConfig
+  opencodeConfig
 }

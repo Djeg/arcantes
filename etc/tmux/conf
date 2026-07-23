@@ -1,5 +1,10 @@
 set -g prefix C-b
 
+# plugins
+set -g @plugin 'tmux-plugins/tmux-resurrect'
+set -g @plugin 'catppuccin/tmux#v2.3.0'
+set -g @plugin 'omerxx/tmux-sessionx'
+
 set-option -g default-terminal screen-256color-bce
 set-option -g default-shell /bin/zsh
 set-option -sg escape-time 10
@@ -13,17 +18,14 @@ bind h select-pane -L
 bind j select-pane -D
 bind k select-pane -U
 bind l select-pane -R
-bind $ choose-session
 bind - command-prompt -p find-session 'switch-client -t %%'
 bind ù command-prompt -p rename-session 'rename-session %%'
 
+# Tmux session X
+set -g @sessionx-bind '$'
 
 # Bind new window on current directory
 bind c new-window -c "#{pane_current_path}"
-
-# swap window to the beginning
-bind L swap-window -t +1
-bind H swap-window -t -1
 
 # resize pane
 bind L resize-pane -R 10
@@ -34,38 +36,9 @@ bind H resize-pane -L 10
 # reload tmux conf
 bind-key r source-file ~/.tmux.conf \; display "Config reloaded"
 
-set -g status-position top
-set -g status-fg colour250
-set -g status-bg colour233
-set -g status off
+# Mouse support
 set -g mouse on
 
-# left side of status bar
-set -g status-left-length 10
-set -g status-left ""
-
-# empty right status
-set -g status-right-length 0
-
-# status bar options
-set-option -g status-justify left         # alignment of windows
-# setw -g window-status-fg "colour250"
-# setw -g window-status-attr "none"
-# setw -g window-status-activity-bg "colour233"
-# setw -g window-status-activity-attr "none"
-# setw -g window-status-activity-fg "colour250"
-# setw -g window-status-separator ""
-# setw -g window-status-bg "colour233"
-# setw -g window-status-format "#[bg=colour235,fg=colour244,nobold,noitalics,nounderscore] #I "
-# setw -g window-status-current-format "#[bg=colour250,fg=colour233,bold,noitalics,nounderscore] #W "
-
-
-# message bar
-# set -g message-fg colour250
-# set -g message-bg colour235
-# set -g message-attr bold
-# set -g pane-border-fg colour236
-# set -g pane-active-border-fg colour235
 
 # tmuxinator fix
 set -g base-index 1
@@ -77,3 +50,29 @@ bind a run "tmux save-buffer - | pbcopy"  # Copy to macOS
 # clipboard
 set-option -g set-clipboard external
 set-option -g allow-passthrough on
+
+set -g @catppuccin_flavor 'mocha'
+
+run '~/.tmux/plugins/tpm/tpm'
+
+# Status bar
+set -g status on
+set -g status-position top
+set -g status-style bg=terminal
+
+# Left: session name
+set -g status-left-length 35
+set -g status-left "#[bg=terminal]#[fg=#f5c2e7]#[bg=#f5c2e7,fg=#1e1e2e]   #S  #[bg=terminal,fg=#f5c2e7]"
+
+# Right: date & time
+set -g status-right-length 55
+set -g status-right "#[bg=terminal,fg=#89b4fa]#[bg=#89b4fa,fg=#1e1e2e]  󰃶 %d/%m  󰥔 %H:%M  #[bg=terminal,fg=#89b4fa]"
+
+# Windows tabs - pilules arrondies avec espacement
+set -g status-justify centre
+setw -g window-status-separator "  "
+setw -g window-status-format "#[bg=terminal]#[fg=#585b70]#[bg=#585b70,fg=#cdd6f4]  #I:#W  #[bg=terminal,fg=#585b70]"
+setw -g window-status-current-format "#[bg=terminal]#[fg=#a6e3a1]#[bg=#a6e3a1,fg=#1e1e2e]  #I:#W  #[bg=terminal,fg=#a6e3a1]"
+# setw -g window-status-activity-format "#[bg=terminal]#[fg=#f9e2af]#[bg=#f9e2af,fg=#1e1e2e]  #I:#W  #[bg=terminal,fg=#f9e2af]"
+
+set -g status-format[1] "#[bg=terminal] "

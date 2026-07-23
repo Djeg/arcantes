@@ -63,3 +63,6 @@ vim.g.transparent_enabled = true
 
 -- Lua Snippet path
 vim.g.lua_snippets_path = vim.fn.stdpath("config") .. "/lua/snippets"
+
+-- netrw
+vim.g.netrw_scp_cmd = "scp >/dev/null"

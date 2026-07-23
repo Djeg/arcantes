@@ -1,6 +1,6 @@
 [user]
   name = David Jegat
-  email = david.jegat@gmail.com
+  email = david.jegat@irit.fr
 
 [color]
   ui = true
@@ -32,13 +32,16 @@
   tool = vimdiff
 
 [mergetool "vimdiff"]
-  path = nvim
+  path = vim
 
 [url "git@github.com:"]
   insteadOf = gh:
 
 [push]
   default = current
+
 [pull]
   rebase = true
   default = current
+[safe]
+	directory = *

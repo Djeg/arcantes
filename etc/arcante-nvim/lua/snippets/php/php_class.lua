@@ -24,7 +24,30 @@ local php_class_snippet = s({ trig = "cl", desc = "PHP class snippet" }, {
 	t("namespace "),
 	f(get_namespace_from_buffer, {}),
 	t({ ";", "", "" }),
+	t("/**"),
+	t({ "", " * " }),
+	i(1),
+	t({ "", " */" }),
+	t({ "", "" }),
 	t("class "),
+	f(get_class_name_from_buffer, {}),
+	t({ "", "{", "\t" }),
+	i(0),
+	t({ "", "}" }),
+})
+
+local php_interface_snippet = s({ trig = "it", desc = "PHP interface snippet" }, {
+	t("<?php"),
+	t({ "", "", "" }),
+	t("namespace "),
+	f(get_namespace_from_buffer, {}),
+	t({ ";", "", "" }),
+	t("/**"),
+	t({ "", " * " }),
+	i(1),
+	t({ "", " */" }),
+	t({ "", "" }),
+	t("interface "),
 	f(get_class_name_from_buffer, {}),
 	t({ "", "{", "\t" }),
 	i(0),
@@ -146,8 +169,31 @@ local php_method_one_snippet = s({ trig = "fn1", desc = "PHP method of one argum
 	t({ "", "}" }),
 })
 
+local sf_routing_config_file_snippet = s({ trig = "sfro", desc = "Symfony routing configuration file snippet" }, {
+	t("<?php"),
+	t({ "", "", "" }),
+	t("namespace Symfony\\Component\\Routing\\Loader\\Configurator;"),
+	t({ "", "", "" }),
+	t("return Routes::config(["),
+	t({ "", "\t" }),
+	i(0),
+	t({ "", "]);" }),
+})
+
+local sf_config_file_snippet = s({ trig = "sfco", desc = "Symfony configuration file snippet" }, {
+	t("<?php"),
+	t({ "", "", "" }),
+	t("namespace Symfony\\Component\\DependencyInjection\\Loader\\Configurator;"),
+	t({ "", "", "" }),
+	t("return App::config(["),
+	t({ "", "\t" }),
+	i(0),
+	t({ "", "]);" }),
+})
+
 return {
 	php_class_snippet,
+	php_interface_snippet,
 	php_construct_snippet,
 	php_attribute_snippet,
 	php_getter_snippet,
@@ -155,4 +201,6 @@ return {
 	php_getset_snippet,
 	php_method_snippet,
 	php_method_one_snippet,
+	sf_routing_config_file_snippet,
+	sf_config_file_snippet,
 }
