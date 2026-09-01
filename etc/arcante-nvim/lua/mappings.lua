@@ -112,3 +112,33 @@ vim.keymap.set("n", "<leader>rsi", "<cmd>RsyncInit<CR>", { desc = "Rsync créer 
 -- vim.keymap.set("n", "<S-C-d>", function()
 -- 	require("opencode").command("session.half.page.down")
 -- end, { desc = "Scroll OpenCode down" })
+-- init.lua ou mappings.lua
+local function toggle_terminal()
+  local width = math.floor(vim.o.columns * 0.8)
+  local height = math.floor(vim.o.lines * 0.8)
+  local col = math.floor((vim.o.columns - width) / 2)
+  local row = math.floor((vim.o.lines - height) / 2)
+  
+  local buf = vim.api.nvim_create_buf(false, true)
+  
+  local win = vim.api.nvim_open_win(buf, true, {
+    relative = "editor",
+    width = width,
+    height = height,
+    col = col,
+    row = row,
+    border = "rounded",
+    style = "minimal",
+  })
+  
+  vim.cmd('terminal')
+end
+
+vim.keymap.set('n', '<leader>t', toggle_terminal, { noremap = true, silent = true })
+
+-- Quitter le terminal
+vim.keymap.set('t', '<Esc>', '<C-\\><C-n>', { noremap = true })
+vim.keymap.set('t', '<leader>q', '<C-\\><C-n>', { noremap = true })
+
+-- Auto Insert
+vim.cmd('autocmd TermOpen * startinsert')
